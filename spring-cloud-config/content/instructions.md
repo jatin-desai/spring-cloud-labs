@@ -1,6 +1,6 @@
 +++
 date = "2015-11-01T21:36:27-08:00"
-title = "instructions"
+title = "Instructions"
 
 +++
 
@@ -10,7 +10,7 @@ title = "instructions"
 To start, we need a repository to hold our configuration.
 
 1) Fork the configuration repo to your account.  Browse to: https://github.com/pivotal-enablement/app-config.  Then fork the repo.
-![fork](resources/images/fork.png "fork")
+![fork](/spring-cloud-config/resources/images/fork.png "fork")
 
 2) GitHub displays your new fork. Copy the HTTPS clone URL from your fork.
 
@@ -83,7 +83,7 @@ name: <Your Name>
 
 Open a browser window and fetch the following url: [http://localhost:8888/hello-world/default](http://localhost:8888/hello-world/default)
 
-![Config Server - API](resources/images/api.png "Config Server - API")
+![Config Server - API](/spring-cloud-config/resources/images/api.png "Config Server - API")
 
 ***What Just Happened?***
 
@@ -135,7 +135,7 @@ password: You can find this in the terminal output.  Look for a log message simi
 ***Note:*** Username and password can be explicitly set through the `security.user.name` and `security.user.password` configuration parameters.
 
 6) After logging in you should see the message "Greetings!!!".
-![greeting-config](resources/images/greeting-config.png "greeting-config")
+![greeting-config](/spring-cloud-config/resources/images/greeting-config.png "greeting-config")
 
 ***What Just Happened?***
 
@@ -172,7 +172,7 @@ management:
 
 2) Browse to [http://localhost:8888/greeting-config/default](http://localhost:8888/greeting-config/default) to review the configuration the  `config-server` is providing for `greeting-config` application.
 
-![security](resources/images/security.png "security")
+![security](/spring-cloud-config/resources/images/security.png "security")
 
 3) Start the `greeting-config` application:
 
@@ -216,11 +216,11 @@ configuration. All log output will be directed to `System.out` & `System.error` 
 ```yml
 security:
   basic:
-    enabled: false # turn of securing our application endpoints
+    enabled: false
 
 management:
   security:
-    enabled: false # turn of securing the actuator endpoints
+    enabled: false
 
 logging: # <----New sections below
   level:
@@ -239,7 +239,7 @@ We have added several configuration parameters that will be used throughout this
 
 4) Does the `config-server` see the change in your git repo?  Let's check what the `config-server` is serving.  Browse to [http://localhost:8888/greeting-config/default](http://localhost:8888/greeting-config/default)
 
-![updated-config](resources/images/updated-config.png "updated-config")
+![updated-config](/spring-cloud-config/resources/images/updated-config.png "updated-config")
 
 The propertySources value has changed!  The `config-server` has picked up the changes to the git repo. (If you don't see the change,
 verify that you have pushed the greeting-config.yml to GitHub.)
@@ -323,15 +323,24 @@ public class GreetingController {
 3) Edit your fork of the `app-config` repo.   Change `greeting.displayFortune` from `false` to `true` in the `greeting-config.yml` and push the changes back to GitHub.
 
 ```yml
+security:
+  basic:
+    enabled: false
+
+management:
+  security:
+    enabled: false
+
 logging:
   level:
     io:
       pivotal: DEBUG
 
 greeting:
-  displayFortune: true
+  displayFortune: true # <----Change to true
 
 quoteServiceURL: http://quote-service-dev.cfapps.io/quote
+
 ```
 
 4) Notify `greeting-config` app to pick up the new config by POSTing to the `/refresh` endpoint.
@@ -346,7 +355,7 @@ Congratulations! You have turned on a feature using the config-server.
 
 ### Reinitializing Beans with `@RefreshScope`
 
-Now you will use the config-server to obtain a service URI rather than hardcoding it your application code.
+Now you will use the `config-server` to obtain a service URI rather than hardcoding it your application code.
 
 Beans annotated with the `@RefreshScope` will be recreated when refreshed so they can pick up new config values.
 
@@ -428,15 +437,17 @@ quoteServiceURL: http://quote-service-qa.cfapps.io/quote
 ```
 Make sure to commit and push to GitHub.
 
-4) Refresh the application configuration values
+4) Browse to [http://localhost:8080/random-quote](http://localhost:8080/random-quote).  Quotes are still being served from `http://quote-service-dev.cfapps.io/quote`.
+
+5) Refresh the application configuration values
 
 ```bash
 $ curl -X POST http://localhost:8080/refresh
 ```
 
-5) Refresh the [http://localhost:8080/random-quote](http://localhost:8080/random-quote) url.  Quotes are now being served from QA.
+6) Refresh the [http://localhost:8080/random-quote](http://localhost:8080/random-quote) url.  Quotes are now being served from QA.
 
-6) Stop both the `config-server` and `greeting-config` applications.
+7) Stop both the `config-server` and `greeting-config` applications.
 
 ***What Just Happened?***
 
@@ -462,19 +473,19 @@ $ cf push greeting-config -p target/greeting-config-0.0.1-SNAPSHOT.jar -m 512M -
 Using Apps Manager do the following (for help review the [docs](http://docs.pivotal.io/spring-cloud-services/config-server/creating-an-instance.html)):
 
 a) Log into Apps Manager as a Space Developer. In the Marketplace, select Config Server for Pivotal Cloud Foundry.
-![marketplace](resources/images/1_marketplace.png "marketplace")
+![marketplace](/spring-cloud-config/resources/images/1_marketplace.png "marketplace")
 
 b) Select the desired plan for the new service.
-![select plan](resources/images/2_select_plan.png "select plan")
+![select plan](/spring-cloud-config/resources/images/2_select_plan.png "select plan")
 
 c) Name the service `config-server`. Your space may be different.  Click the ***Add*** button.
-![configure](resources/images/3_configure.png "configure")
+![configure](/spring-cloud-config/resources/images/3_configure.png "configure")
 
-d) In the ***Services*** list, click the ***Manage*** link under the listing for the new service instance.
-![service successfully added](resources/images/4_service_successfully_added.png "service successfully added")
+d) In the ***Services*** list, click the ***Manage*** link under the listing for the new service instance.  The Config Server may take a few moments to initialize.
+![service successfully added](/spring-cloud-config/resources/images/4_service_successfully_added.png "service successfully added")
 
-e) Select a ***Configuration Source*** and enter your fork of the `app-config` repo.  Do not use the literal below.
-![dashboard](resources/images/dashboard.png "dashboard")
+e) Select `Git` as the ***Configuration Source*** and enter your fork of the `app-config` repo under ***GitURI***.  Do not use the literal below.
+![dashboard](/spring-cloud-config/resources/images/dashboard.png "dashboard")
 
 f) The Config Server instance (`config-server`) is now ready to be used.
 
@@ -487,7 +498,7 @@ $ cf bind-service greeting-config config-server
 
 You can safely ignore the _TIP: Use 'cf restage' to ensure your env variable changes take effect_ message from the CLI.  Our app doesn't need to be restaged at this time.
 
-5) If using self signed certificates, set the CF_TARGET environment variable to API endpoint of your Elastic Runtime instance.  Make sure to use `https://` not `http://`.
+5) If using self signed certificates, set the `CF_TARGET` environment variable to API endpoint of your Elastic Runtime instance.  Make sure to use `https://` not `http://`.  You can quickly retrieve the API endpoint by running the command `cf t`.
 
 ```bash
 cf set-env greeting-config CF_TARGET <your api endpoint - make sure it starts with "https://">
@@ -497,7 +508,7 @@ You can safely ignore the _TIP: Use 'cf restage' to ensure your env variable cha
 
 ***NOTE***
 
-All communication between Spring Cloud Services components are made through HTTPS. If you are on an environment that uses self-signed certs, the Java SSL trust store will not have those certificates.  By adding the CF_TARGET environment variable a trusted domain is added to the Java trust store.  Eventually ERS will drop the self-signed certs into every app container, and removing the need to set the CF_TARGET environment variable.
+All communication between Spring Cloud Services components are made through HTTPS. If you are on an environment that uses self-signed certs, the Java SSL trust store will not have those certificates.  By adding the `CF_TARGET` environment variable a trusted domain is added to the Java trust store.  Eventually ERS will drop the self-signed certs into every app container, and removing the need to set the `CF_TARGET` environment variable.
 
 6) Start the `greeting-config` app. The proper environment variables will be set.
 

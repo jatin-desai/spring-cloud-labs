@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://:1313/spring-cloud-config/</loc>
-    <lastmod>2015-11-01T21:36:39-08:00</lastmod>
+    <lastmod>2015-11-01T21:36:54-08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://:1313/spring-cloud-config/_index/</loc>
+    <lastmod>2015-11-01T21:36:54-08:00</lastmod>
   </url>
   
   <url>

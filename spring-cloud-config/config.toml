@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "Spring Cloud Config"
-theme = "hugo-theme-bootie-docs"
+theme = "docs"
 copyright = "© Copyright Pivotal. All rights reserved."
 
 [params]

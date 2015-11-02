@@ -45,3 +45,11 @@ ul.navbar-nav {
   margin-top: 3px;
   color: white;
 }
+
+img {
+  max-width: 100%;
+}
+
+.title {
+  border: none;
+}

@@ -1,5 +1,9 @@
 +++
 date = "2015-11-01T21:36:36-08:00"
-title = "resources"
+title = "Resources"
 
 +++
+
+* [Spring Cloud](https://http://projects.spring.io/spring-cloud/)
+* [Spring Cloud Netflix](http://cloud.spring.io/spring-cloud-netflix/)
+* [Spring Cloud Projects](http://projects.spring.io/spring-cloud/spring-cloud.html)

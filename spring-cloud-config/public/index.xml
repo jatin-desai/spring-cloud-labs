@@ -7,11 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright Pivotal. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 01 Nov 2015 21:36:39 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2015 21:36:54 -0800</lastBuildDate>
     <atom:link href="http://:1313/spring-cloud-config/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>setup</title>
+      <title>_index</title>
+      <link>http://:1313/spring-cloud-config/_index/</link>
+      <pubDate>Sun, 01 Nov 2015 21:36:54 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-config/_index/</guid>
+      <description>&lt;p&gt;In this workshop, we will use &lt;a href=&#34;http://projects.spring.io/spring-cloud/&#34;&gt;Spring Cloud&lt;/a&gt; to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Set up a git repository to hold configuration data&lt;/li&gt;
+&lt;li&gt;Set up a config Server&lt;/li&gt;
+&lt;li&gt;Learn how to change log levels for a running application&lt;/li&gt;
+&lt;li&gt;Learn how to use Spring Cloud Service to provision and configure a Config Server&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
       <link>http://:1313/spring-cloud-config/setup/</link>
       <pubDate>Sun, 01 Nov 2015 21:36:39 -0800</pubDate>
       
@@ -57,16 +74,21 @@
     </item>
     
     <item>
-      <title>resources</title>
+      <title>Resources</title>
       <link>http://:1313/spring-cloud-config/resources/</link>
       <pubDate>Sun, 01 Nov 2015 21:36:36 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-config/resources/</guid>
-      <description></description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://http://projects.spring.io/spring-cloud/&#34;&gt;Spring Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cloud.spring.io/spring-cloud-netflix/&#34;&gt;Spring Cloud Netflix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://projects.spring.io/spring-cloud/spring-cloud.html&#34;&gt;Spring Cloud Projects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
-      <title>instructions</title>
+      <title>Instructions</title>
       <link>http://:1313/spring-cloud-config/instructions/</link>
       <pubDate>Sun, 01 Nov 2015 21:36:27 -0800</pubDate>
       
@@ -80,7 +102,7 @@
 &lt;p&gt;To start, we need a repository to hold our configuration.&lt;/p&gt;
 
 &lt;p&gt;1) Fork the configuration repo to your account.  Browse to: &lt;a href=&#34;https://github.com/pivotal-enablement/app-config&#34;&gt;https://github.com/pivotal-enablement/app-config&lt;/a&gt;.  Then fork the repo.
-&lt;img src=&#34;resources/images/fork.png&#34; alt=&#34;fork&#34; title=&#34;fork&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/fork.png&#34; alt=&#34;fork&#34; title=&#34;fork&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;2) GitHub displays your new fork. Copy the HTTPS clone URL from your fork.&lt;/p&gt;
 
@@ -151,7 +173,7 @@ will not be returned to a command prompt and must leave this window open.&lt;/p&
 
 &lt;p&gt;Open a browser window and fetch the following url: &lt;a href=&#34;http://localhost:8888/hello-world/default&#34;&gt;http://localhost:8888/hello-world/default&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;resources/images/api.png&#34; alt=&#34;Config Server - API&#34; title=&#34;Config Server - API&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/api.png&#34; alt=&#34;Config Server - API&#34; title=&#34;Config Server - API&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;What Just Happened?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -198,7 +220,7 @@ $ mvn clean spring-boot:run
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; Username and password can be explicitly set through the &lt;code&gt;security.user.name&lt;/code&gt; and &lt;code&gt;security.user.password&lt;/code&gt; configuration parameters.&lt;/p&gt;
 
 &lt;p&gt;6) After logging in you should see the message &amp;ldquo;Greetings!!!&amp;rdquo;.
-&lt;img src=&#34;resources/images/greeting-config.png&#34; alt=&#34;greeting-config&#34; title=&#34;greeting-config&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/greeting-config.png&#34; alt=&#34;greeting-config&#34; title=&#34;greeting-config&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;What Just Happened?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -233,7 +255,7 @@ management:
 
 &lt;p&gt;2) Browse to &lt;a href=&#34;http://localhost:8888/greeting-config/default&#34;&gt;http://localhost:8888/greeting-config/default&lt;/a&gt; to review the configuration the  &lt;code&gt;config-server&lt;/code&gt; is providing for &lt;code&gt;greeting-config&lt;/code&gt; application.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;resources/images/security.png&#34; alt=&#34;security&#34; title=&#34;security&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/security.png&#34; alt=&#34;security&#34; title=&#34;security&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;3) Start the &lt;code&gt;greeting-config&lt;/code&gt; application:&lt;/p&gt;
 
@@ -276,11 +298,11 @@ configuration. All log output will be directed to &lt;code&gt;System.out&lt;/cod
 
 &lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;security:
   basic:
-    enabled: false # turn of securing our application endpoints
+    enabled: false
 
 management:
   security:
-    enabled: false # turn of securing the actuator endpoints
+    enabled: false
 
 logging: # &amp;lt;----New sections below
   level:
@@ -300,7 +322,7 @@ quoteServiceURL: http://quote-service-dev.cfapps.io/quote
 
 &lt;p&gt;4) Does the &lt;code&gt;config-server&lt;/code&gt; see the change in your git repo?  Let&amp;rsquo;s check what the &lt;code&gt;config-server&lt;/code&gt; is serving.  Browse to &lt;a href=&#34;http://localhost:8888/greeting-config/default&#34;&gt;http://localhost:8888/greeting-config/default&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;resources/images/updated-config.png&#34; alt=&#34;updated-config&#34; title=&#34;updated-config&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/updated-config.png&#34; alt=&#34;updated-config&#34; title=&#34;updated-config&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The propertySources value has changed!  The &lt;code&gt;config-server&lt;/code&gt; has picked up the changes to the git repo. (If you don&amp;rsquo;t see the change,
 verify that you have pushed the greeting-config.yml to GitHub.)&lt;/p&gt;
@@ -379,15 +401,24 @@ public class GreetingController {
 
 &lt;p&gt;3) Edit your fork of the &lt;code&gt;app-config&lt;/code&gt; repo.   Change &lt;code&gt;greeting.displayFortune&lt;/code&gt; from &lt;code&gt;false&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in the &lt;code&gt;greeting-config.yml&lt;/code&gt; and push the changes back to GitHub.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;logging:
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;security:
+  basic:
+    enabled: false
+
+management:
+  security:
+    enabled: false
+
+logging:
   level:
     io:
       pivotal: DEBUG
 
 greeting:
-  displayFortune: true
+  displayFortune: true # &amp;lt;----Change to true
 
 quoteServiceURL: http://quote-service-dev.cfapps.io/quote
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;4) Notify &lt;code&gt;greeting-config&lt;/code&gt; app to pick up the new config by POSTing to the &lt;code&gt;/refresh&lt;/code&gt; endpoint.&lt;/p&gt;
@@ -401,7 +432,7 @@ quoteServiceURL: http://quote-service-dev.cfapps.io/quote
 
 &lt;h3 id=&#34;reinitializing-beans-with-refreshscope:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Reinitializing Beans with &lt;code&gt;@RefreshScope&lt;/code&gt;&lt;/h3&gt;
 
-&lt;p&gt;Now you will use the config-server to obtain a service URI rather than hardcoding it your application code.&lt;/p&gt;
+&lt;p&gt;Now you will use the &lt;code&gt;config-server&lt;/code&gt; to obtain a service URI rather than hardcoding it your application code.&lt;/p&gt;
 
 &lt;p&gt;Beans annotated with the &lt;code&gt;@RefreshScope&lt;/code&gt; will be recreated when refreshed so they can pick up new config values.&lt;/p&gt;
 
@@ -481,14 +512,16 @@ $ mvn clean spring-boot:run
 
 &lt;p&gt;Make sure to commit and push to GitHub.&lt;/p&gt;
 
-&lt;p&gt;4) Refresh the application configuration values&lt;/p&gt;
+&lt;p&gt;4) Browse to &lt;a href=&#34;http://localhost:8080/random-quote&#34;&gt;http://localhost:8080/random-quote&lt;/a&gt;.  Quotes are still being served from &lt;code&gt;http://quote-service-dev.cfapps.io/quote&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;5) Refresh the application configuration values&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -X POST http://localhost:8080/refresh
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;5) Refresh the &lt;a href=&#34;http://localhost:8080/random-quote&#34;&gt;http://localhost:8080/random-quote&lt;/a&gt; url.  Quotes are now being served from QA.&lt;/p&gt;
+&lt;p&gt;6) Refresh the &lt;a href=&#34;http://localhost:8080/random-quote&#34;&gt;http://localhost:8080/random-quote&lt;/a&gt; url.  Quotes are now being served from QA.&lt;/p&gt;
 
-&lt;p&gt;6) Stop both the &lt;code&gt;config-server&lt;/code&gt; and &lt;code&gt;greeting-config&lt;/code&gt; applications.&lt;/p&gt;
+&lt;p&gt;7) Stop both the &lt;code&gt;config-server&lt;/code&gt; and &lt;code&gt;greeting-config&lt;/code&gt; applications.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;What Just Happened?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -511,19 +544,19 @@ $ mvn clean spring-boot:run
 &lt;p&gt;Using Apps Manager do the following (for help review the &lt;a href=&#34;http://docs.pivotal.io/spring-cloud-services/config-server/creating-an-instance.html&#34;&gt;docs&lt;/a&gt;):&lt;/p&gt;
 
 &lt;p&gt;a) Log into Apps Manager as a Space Developer. In the Marketplace, select Config Server for Pivotal Cloud Foundry.
-&lt;img src=&#34;resources/images/1_marketplace.png&#34; alt=&#34;marketplace&#34; title=&#34;marketplace&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/1_marketplace.png&#34; alt=&#34;marketplace&#34; title=&#34;marketplace&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;b) Select the desired plan for the new service.
-&lt;img src=&#34;resources/images/2_select_plan.png&#34; alt=&#34;select plan&#34; title=&#34;select plan&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/2_select_plan.png&#34; alt=&#34;select plan&#34; title=&#34;select plan&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;c) Name the service &lt;code&gt;config-server&lt;/code&gt;. Your space may be different.  Click the &lt;strong&gt;&lt;em&gt;Add&lt;/em&gt;&lt;/strong&gt; button.
-&lt;img src=&#34;resources/images/3_configure.png&#34; alt=&#34;configure&#34; title=&#34;configure&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/3_configure.png&#34; alt=&#34;configure&#34; title=&#34;configure&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;d) In the &lt;strong&gt;&lt;em&gt;Services&lt;/em&gt;&lt;/strong&gt; list, click the &lt;strong&gt;&lt;em&gt;Manage&lt;/em&gt;&lt;/strong&gt; link under the listing for the new service instance.
-&lt;img src=&#34;resources/images/4_service_successfully_added.png&#34; alt=&#34;service successfully added&#34; title=&#34;service successfully added&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;d) In the &lt;strong&gt;&lt;em&gt;Services&lt;/em&gt;&lt;/strong&gt; list, click the &lt;strong&gt;&lt;em&gt;Manage&lt;/em&gt;&lt;/strong&gt; link under the listing for the new service instance.  The Config Server may take a few moments to initialize.
+&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/4_service_successfully_added.png&#34; alt=&#34;service successfully added&#34; title=&#34;service successfully added&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;e) Select a &lt;strong&gt;&lt;em&gt;Configuration Source&lt;/em&gt;&lt;/strong&gt; and enter your fork of the &lt;code&gt;app-config&lt;/code&gt; repo.  Do not use the literal below.
-&lt;img src=&#34;resources/images/dashboard.png&#34; alt=&#34;dashboard&#34; title=&#34;dashboard&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;e) Select &lt;code&gt;Git&lt;/code&gt; as the &lt;strong&gt;&lt;em&gt;Configuration Source&lt;/em&gt;&lt;/strong&gt; and enter your fork of the &lt;code&gt;app-config&lt;/code&gt; repo under &lt;strong&gt;&lt;em&gt;GitURI&lt;/em&gt;&lt;/strong&gt;.  Do not use the literal below.
+&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/dashboard.png&#34; alt=&#34;dashboard&#34; title=&#34;dashboard&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;f) The Config Server instance (&lt;code&gt;config-server&lt;/code&gt;) is now ready to be used.&lt;/p&gt;
 
@@ -535,7 +568,7 @@ configuration values from the &lt;code&gt;config-server&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;You can safely ignore the &lt;em&gt;TIP: Use &amp;lsquo;cf restage&amp;rsquo; to ensure your env variable changes take effect&lt;/em&gt; message from the CLI.  Our app doesn&amp;rsquo;t need to be restaged at this time.&lt;/p&gt;
 
-&lt;p&gt;5) If using self signed certificates, set the CF_TARGET environment variable to API endpoint of your Elastic Runtime instance.  Make sure to use &lt;code&gt;https://&lt;/code&gt; not &lt;code&gt;http://&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;5) If using self signed certificates, set the &lt;code&gt;CF_TARGET&lt;/code&gt; environment variable to API endpoint of your Elastic Runtime instance.  Make sure to use &lt;code&gt;https://&lt;/code&gt; not &lt;code&gt;http://&lt;/code&gt;.  You can quickly retrieve the API endpoint by running the command &lt;code&gt;cf t&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cf set-env greeting-config CF_TARGET &amp;lt;your api endpoint - make sure it starts with &amp;quot;https://&amp;quot;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -544,7 +577,7 @@ configuration values from the &lt;code&gt;config-server&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;All communication between Spring Cloud Services components are made through HTTPS. If you are on an environment that uses self-signed certs, the Java SSL trust store will not have those certificates.  By adding the CF_TARGET environment variable a trusted domain is added to the Java trust store.  Eventually ERS will drop the self-signed certs into every app container, and removing the need to set the CF_TARGET environment variable.&lt;/p&gt;
+&lt;p&gt;All communication between Spring Cloud Services components are made through HTTPS. If you are on an environment that uses self-signed certs, the Java SSL trust store will not have those certificates.  By adding the &lt;code&gt;CF_TARGET&lt;/code&gt; environment variable a trusted domain is added to the Java trust store.  Eventually ERS will drop the self-signed certs into every app container, and removing the need to set the &lt;code&gt;CF_TARGET&lt;/code&gt; environment variable.&lt;/p&gt;
 
 &lt;p&gt;6) Start the &lt;code&gt;greeting-config&lt;/code&gt; app. The proper environment variables will be set.&lt;/p&gt;
 
@@ -645,7 +678,7 @@ $ cf logs greeting-config
     </item>
     
     <item>
-      <title>goals</title>
+      <title>Goals</title>
       <link>http://:1313/spring-cloud-config/goals/</link>
       <pubDate>Sun, 01 Nov 2015 21:36:01 -0800</pubDate>
       
