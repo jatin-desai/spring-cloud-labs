@@ -1,3 +1,10 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
 languageCode = "en-us"
 title = "Spring Cloud Config"
+theme = "hugo-theme-bootie-docs"
+copyright = "© Copyright Pivotal. All rights reserved."
+
+[params]
+  basedir = "/spring-cloud-config"
+  mainMenu=["goals", "setup", "instructions", "resources"]
+  noCategoryLink = true
+  description = ""
