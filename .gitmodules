@@ -1,6 +1,3 @@
-[submodule "spring-cloud-config/spring-cloud-config/themes/bootie-docs"]
-	path = spring-cloud-config/spring-cloud-config/themes/hugo-theme-bootie-docs
-	url = git@github.com:pivotal-enablement/hugo-theme-bootie-docs.git
 [submodule "spring-cloud-config/themes/docs"]
 	path = spring-cloud-config/themes/docs
 	url = git@github.com:pivotal-enablement/hugo-theme-bootie-docs.git
