@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Cloud Config</title>
+    <link>http://:1313/spring-cloud-config/</link>
+    <description>Recent content on Spring Cloud Config</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright Pivotal. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 01 Nov 2015 21:36:39 -0800</lastBuildDate>
+    <atom:link href="http://:1313/spring-cloud-config/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>setup</title>
+      <link>http://:1313/spring-cloud-config/setup/</link>
+      <pubDate>Sun, 01 Nov 2015 21:36:39 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-config/setup/</guid>
+      <description>
+
+&lt;h2 id=&#34;lab-requirements:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Lab Requirements&lt;/h2&gt;
+
+&lt;h3 id=&#34;local-machine-requirements:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Local machine requirements&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;8GB Memory&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&#34;&gt;JDK 1.8&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation and experience with &lt;a href=&#34;https://git-scm.com/&#34;&gt;git&lt;/a&gt; and&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/&#34;&gt;Github Account&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Experience with &lt;a href=&#34;https://spring.io/&#34;&gt;Spring&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;http://curl.haxx.se/download.html&#34;&gt;&lt;code&gt;curl&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://run.pivotal.io/&#34;&gt;Pivotal Web Services Account&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;https://console.run.pivotal.io/tools&#34;&gt;&lt;code&gt;cf&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;optional-but-recommended:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Optional (but recommended)&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://spring.io/tools&#34;&gt;SpringSource Tool Suite&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en&#34;&gt;Json Formatter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;windows-vm:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Windows VM&lt;/h3&gt;
+
+&lt;p&gt;If using the Windows VM see these &lt;a href=&#34;windows-vm.md&#34;&gt;requirements&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>resources</title>
+      <link>http://:1313/spring-cloud-config/resources/</link>
+      <pubDate>Sun, 01 Nov 2015 21:36:36 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-config/resources/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>instructions</title>
+      <link>http://:1313/spring-cloud-config/instructions/</link>
+      <pubDate>Sun, 01 Nov 2015 21:36:27 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-config/instructions/</guid>
+      <description>
+
+&lt;h2 id=&#34;exercises:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Exercises&lt;/h2&gt;
+
+&lt;h3 id=&#34;set-up-the-app-config-repo:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Set up the &lt;code&gt;app-config&lt;/code&gt; Repo&lt;/h3&gt;
+
+&lt;p&gt;To start, we need a repository to hold our configuration.&lt;/p&gt;
+
+&lt;p&gt;1) Fork the configuration repo to your account.  Browse to: &lt;a href=&#34;https://github.com/pivotal-enablement/app-config&#34;&gt;https://github.com/pivotal-enablement/app-config&lt;/a&gt;.  Then fork the repo.
+&lt;img src=&#34;resources/images/fork.png&#34; alt=&#34;fork&#34; title=&#34;fork&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2) GitHub displays your new fork. Copy the HTTPS clone URL from your fork.&lt;/p&gt;
+
+&lt;p&gt;3) Open a new terminal window and clone the fork you just created (you may want to create a common location for your GitHub repos, such as ~/repos):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd [location of your github repos, e.g. ~/repos]
+$ git clone &amp;lt;Your fork of the app-config repo - HTTPS clone URL&amp;gt;
+$ cd app-config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that this repository is basically empty. This repository will be the source of configuration data.&lt;/p&gt;
+
+&lt;h3 id=&#34;set-up-config-server:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Set up &lt;code&gt;config-server&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;1) Review the following file: &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/config-server/pom.xml&lt;/code&gt;
+By adding &lt;code&gt;spring-cloud-config-server&lt;/code&gt; to the classpath, this application is eligible to embed a config-server.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;spring-cloud-config-server&amp;lt;/artifactId&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Review the following file:&lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/config-server/src/main/java/io/pivotal/ConfigServerApplication.java&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@SpringBootApplication
+@EnableConfigServer
+public class ConfigServerApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ConfigServerApplication.class, args);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note the &lt;code&gt;@EnableConfigServer&lt;/code&gt; annotation.  That embeds the config-server.&lt;/p&gt;
+
+&lt;p&gt;3) Set the GitHub repository for the &lt;code&gt;config-server&lt;/code&gt;. This will be the source of the configuration data. Edit the &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/config-server/src/main/resources/application.yml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt; server:
+   port: 8888
+
+ spring:
+   cloud:
+     config:
+       server:
+         git:
+           uri: https://github.com/d4v3r/app-config.git #&amp;lt;-- CHANGE ME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make sure to substitute your forked app-config repository. Do not use the literal above.&lt;/p&gt;
+
+&lt;p&gt;4) Open a terminal window and start the &lt;code&gt;config-server&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/config-server
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Your config-server will be running locally once you see a &amp;ldquo;Started ConfigServerApplication&amp;hellip;&amp;rdquo; message. You
+will not be returned to a command prompt and must leave this window open.&lt;/p&gt;
+
+&lt;p&gt;5) Let&amp;rsquo;s add some configuration.  Edit your fork of the &lt;code&gt;app-config&lt;/code&gt; repo.  Create a file called &lt;code&gt;hello-world.yml&lt;/code&gt;.  Add the content below to the file and push the changes back to GitHub.  Be sure to substitute your name for &lt;code&gt;&amp;lt;Your name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;name: &amp;lt;Your Name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;6) Confirm the &lt;code&gt;config-server&lt;/code&gt; is up and configured with a backing git repository by calling one of its &lt;a href=&#34;http://projects.spring.io/spring-cloud/docs/1.0.3/spring-cloud.html#_quick_start&#34;&gt;endpoints&lt;/a&gt;.  Because the returned payload is JSON, we recommend using something that will pretty-print the document.  A good tool for this is the Chrome &lt;a href=&#34;https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en&#34;&gt;JSON Formatter&lt;/a&gt; plug-in.&lt;/p&gt;
+
+&lt;p&gt;Open a browser window and fetch the following url: &lt;a href=&#34;http://localhost:8888/hello-world/default&#34;&gt;http://localhost:8888/hello-world/default&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;resources/images/api.png&#34; alt=&#34;Config Server - API&#34; title=&#34;Config Server - API&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What Just Happened?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;config-server&lt;/code&gt; exposes several &lt;a href=&#34;http://projects.spring.io/spring-cloud/docs/1.0.3/spring-cloud.html#_quick_start&#34;&gt;endpoints&lt;/a&gt; to fetch configuration.&lt;/p&gt;
+
+&lt;p&gt;In this case, we are manually calling one of those endpoints (&lt;code&gt;/{application}/{profile}[/{label}]&lt;/code&gt;) to fetch configuration.  We substituted our example client application &lt;code&gt;hello-world&lt;/code&gt; as the &lt;code&gt;{application}&lt;/code&gt; and the &lt;code&gt;default&lt;/code&gt; profile as the &lt;code&gt;{profile}&lt;/code&gt;.  We didn&amp;rsquo;t specify the label to use so &lt;code&gt;master&lt;/code&gt; is assumed.  In the returned document, we see the configuration file &lt;code&gt;hello-world.yml&lt;/code&gt; listed as a &lt;code&gt;propertySource&lt;/code&gt; with the associated key/value pair.  This is just an example, as you move through the lab you will add configuration for &lt;code&gt;greeting-config&lt;/code&gt; (our client application).&lt;/p&gt;
+
+&lt;h3 id=&#34;set-up-greeting-config:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Set up &lt;code&gt;greeting-config&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;1) Review the following file: &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-config/pom.xml&lt;/code&gt;
+By adding &lt;code&gt;spring-cloud-services-starter-config-client&lt;/code&gt; to the classpath, this application will consume configuration from the config-server.  &lt;code&gt;greeting-config&lt;/code&gt; is a config client.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;io.pivotal.spring.cloud&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;spring-cloud-services-starter-config-client&amp;lt;/artifactId&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Review the &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-config/src/main/resources/bootstrap.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;spring:
+  application:
+    name: greeting-config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;spring.application.name&lt;/code&gt; defines the name of the application.  This value is used in several places within Spring Cloud: locating configuration files by name, service discovery/registration by name, etc.  In this lab, it will be used to locate config files for the &lt;code&gt;greeting-config&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;p&gt;Absent from the bootstrap.yml is the &lt;code&gt;spring.cloud.config.uri&lt;/code&gt;, which defines how &lt;code&gt;greeting-config&lt;/code&gt; reaches the &lt;code&gt;config-server&lt;/code&gt;. Since there is no &lt;code&gt;spring.cloud.config.uri&lt;/code&gt; defined in this file, the default value of &lt;code&gt;http://localhost:8888&lt;/code&gt; is used.  Notice that this is the same host and port of the &lt;code&gt;config-server&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;p&gt;3) Open a new terminal window.  Start the &lt;code&gt;greeting-config&lt;/code&gt; application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/greeting-config
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4) Confirm the &lt;code&gt;greeting-config&lt;/code&gt; app is up.  Browse to &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;.  You should be prompted to authenticate.  Why?  &lt;code&gt;spring-cloud-services-starter-config-client&lt;/code&gt; has a dependency on &lt;a href=&#34;http://projects.spring.io/spring-security/&#34;&gt;Spring Security&lt;/a&gt;.  Unless the given application has other security configuration, this will cause all application and actuator endpoints to be protected by HTTP Basic authentication.&lt;/p&gt;
+
+&lt;p&gt;5) If no explicit username or password has been set then Spring Security will generate one for you.&lt;/p&gt;
+
+&lt;p&gt;username: &lt;code&gt;user&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;password: You can find this in the terminal output.  Look for a log message similar to the following: &lt;code&gt;Using default security password: 90a3ef2a-4e98-4491-a528-a47a7162dd2a&lt;/code&gt;.  Use this password to login.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; Username and password can be explicitly set through the &lt;code&gt;security.user.name&lt;/code&gt; and &lt;code&gt;security.user.password&lt;/code&gt; configuration parameters.&lt;/p&gt;
+
+&lt;p&gt;6) After logging in you should see the message &amp;ldquo;Greetings!!!&amp;rdquo;.
+&lt;img src=&#34;resources/images/greeting-config.png&#34; alt=&#34;greeting-config&#34; title=&#34;greeting-config&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What Just Happened?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;At this point, you connected the &lt;code&gt;greeting-config&lt;/code&gt; application with the &lt;code&gt;config-server&lt;/code&gt;.  This can be confirmed by reviewing the logs of the &lt;code&gt;greeting-config&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;greeting-config&lt;/code&gt; log output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;2015-09-18 13:48:50.147  INFO 15706 --- [lication.main()] b.c.PropertySourceBootstrapConfiguration :
+Located property source: CompositePropertySource [name=&#39;configService&#39;, propertySources=[]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There is still no configuration in the git repo, but at this point we have everything wired (&lt;code&gt;greeting-config&lt;/code&gt; → &lt;code&gt;config-server&lt;/code&gt; → &lt;code&gt;app-config&lt;/code&gt; repo) so we can add configuration parameters/values and see the effects in out client application &lt;code&gt;greeting-config&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Configuration parameters/values will be added as we move through the lab.&lt;/p&gt;
+
+&lt;p&gt;7) Stop the &lt;code&gt;greeting-config&lt;/code&gt; application&lt;/p&gt;
+
+&lt;h3 id=&#34;unsecure-the-endpoints:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Unsecure the Endpoints&lt;/h3&gt;
+
+&lt;p&gt;For these labs we don&amp;rsquo;t need Spring Security&amp;rsquo;s default behavior of securing every endpoint.  This will be our first example of using the &lt;code&gt;config-server&lt;/code&gt; to serve configuration for the &lt;code&gt;greeting-config&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;p&gt;1) Edit your fork of the &lt;code&gt;app-config&lt;/code&gt; repo.  Create a file called &lt;code&gt;greeting-config.yml&lt;/code&gt;.  Add the content below to the file and push the changes back to GitHub.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;security:
+  basic:
+    enabled: false # turn of securing our application endpoints
+
+management:
+  security:
+    enabled: false # turn of securing the actuator endpoints
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Browse to &lt;a href=&#34;http://localhost:8888/greeting-config/default&#34;&gt;http://localhost:8888/greeting-config/default&lt;/a&gt; to review the configuration the  &lt;code&gt;config-server&lt;/code&gt; is providing for &lt;code&gt;greeting-config&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;resources/images/security.png&#34; alt=&#34;security&#34; title=&#34;security&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3) Start the &lt;code&gt;greeting-config&lt;/code&gt; application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4) Review the logs for the &lt;code&gt;greeting-config&lt;/code&gt; application.  You can see that configuration is being sourced from the &lt;code&gt;greeting-config.yml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;2015-11-02 08:57:32.962  INFO 58597 --- [lication.main()] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource [name=&#39;configService&#39;, propertySources=[MapPropertySource [name=&#39;https://github.com/d4v3r/app-config.git/greeting-config.yml&#39;]]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5) Browse to &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;.  You should no longer be prompted to authenticate.&lt;/p&gt;
+
+&lt;h3 id=&#34;changing-logging-levels:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Changing Logging Levels&lt;/h3&gt;
+
+&lt;p&gt;As your first use of the &lt;code&gt;config-server&lt;/code&gt;, you will change the logging level of the greeting-config application.&lt;/p&gt;
+
+&lt;p&gt;1) View the &lt;code&gt;getGreeting()&lt;/code&gt; method of the &lt;code&gt;GreetingController&lt;/code&gt; class (&lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-config/src/main/java/io/pivotal/greeting/GreetingController.java&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@RequestMapping(&amp;quot;/&amp;quot;)
+String getGreeting(Model model){
+
+  logger.debug(&amp;quot;Adding greeting&amp;quot;);
+  model.addAttribute(&amp;quot;msg&amp;quot;, &amp;quot;Greetings!!!&amp;quot;);
+
+  if(greetingProperties.isDisplayFortune()){
+    logger.debug(&amp;quot;Adding fortune&amp;quot;);
+    model.addAttribute(&amp;quot;fortune&amp;quot;, fortuneService.getFortune());
+  }
+
+  //resolves to the greeting.vm velocity template
+  return &amp;quot;greeting&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We want to see these debug messages.  By default only log levels of &lt;code&gt;ERROR&lt;/code&gt;, &lt;code&gt;WARN&lt;/code&gt; and &lt;code&gt;INFO&lt;/code&gt; will be logged. You will change the log level to &lt;code&gt;DEBUG&lt;/code&gt; using
+configuration. All log output will be directed to &lt;code&gt;System.out&lt;/code&gt; &amp;amp; &lt;code&gt;System.error&lt;/code&gt; by default, so logs will be output to the terminal window(s).&lt;/p&gt;
+
+&lt;p&gt;2) In your fork of the &lt;code&gt;app-config&lt;/code&gt; repo.  Add the content below to the &lt;code&gt;greeting-config.yml&lt;/code&gt; file and push the changes back to GitHub.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;security:
+  basic:
+    enabled: false # turn of securing our application endpoints
+
+management:
+  security:
+    enabled: false # turn of securing the actuator endpoints
+
+logging: # &amp;lt;----New sections below
+  level:
+    io:
+      pivotal: DEBUG
+
+greeting:
+  displayFortune: false
+
+quoteServiceURL: http://quote-service-dev.cfapps.io/quote
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We have added several configuration parameters that will be used throughout this lab.  For this exercise, we have set the log level for classes in the &lt;code&gt;io.pivotal&lt;/code&gt; package to &lt;code&gt;DEBUG&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;3) While watching the &lt;code&gt;greeting-config&lt;/code&gt; terminal, refresh the &lt;a href=&#34;http://localhost:8080/&#34;&gt;http://localhost:8080&lt;/a&gt; url.  Notice there are no &lt;code&gt;DEBUG&lt;/code&gt; logs yet.&lt;/p&gt;
+
+&lt;p&gt;4) Does the &lt;code&gt;config-server&lt;/code&gt; see the change in your git repo?  Let&amp;rsquo;s check what the &lt;code&gt;config-server&lt;/code&gt; is serving.  Browse to &lt;a href=&#34;http://localhost:8888/greeting-config/default&#34;&gt;http://localhost:8888/greeting-config/default&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;resources/images/updated-config.png&#34; alt=&#34;updated-config&#34; title=&#34;updated-config&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The propertySources value has changed!  The &lt;code&gt;config-server&lt;/code&gt; has picked up the changes to the git repo. (If you don&amp;rsquo;t see the change,
+verify that you have pushed the greeting-config.yml to GitHub.)&lt;/p&gt;
+
+&lt;p&gt;5) Review the following file: &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-config/pom.xml&lt;/code&gt;.  For the &lt;code&gt;greeting-config&lt;/code&gt; application to pick up the configuration changes, it must include the &lt;code&gt;actuator&lt;/code&gt; dependency.  The &lt;code&gt;actuator&lt;/code&gt; adds several additional endpoints to the application for operational visibility and tasks that need to be carried out.  In this case, we have added the actuator so that we can use the &lt;code&gt;/refresh&lt;/code&gt; endpoint, which allows us to refresh the application config on demand.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+  &amp;lt;artifactId&amp;gt;spring-boot-starter-actuator&amp;lt;/artifactId&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;6) For the &lt;code&gt;greeting-config&lt;/code&gt; application to pick up the configuration changes, it must be told to do so.  Notify &lt;code&gt;greeting-config&lt;/code&gt; app to pick up the new config by POSTing to the &lt;code&gt;greeting-config&lt;/code&gt; &lt;code&gt;/refresh&lt;/code&gt; endpoint.  Open a new terminal window and execute the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -X POST http://localhost:8080/refresh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;7) Refresh the &lt;code&gt;greeting-config&lt;/code&gt; &lt;a href=&#34;http://localhost:8080/&#34;&gt;http://localhost:8080&lt;/a&gt; url while viewing the &lt;code&gt;greeting-config&lt;/code&gt; terminal.  You should see the debug line &amp;ldquo;Adding greeting&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Congratulations! You have used the config-server to change the logging level of the greeting-config application.&lt;/p&gt;
+
+&lt;h3 id=&#34;turning-on-a-feature-with-configurationproperties:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Turning on a Feature with &lt;code&gt;@ConfigurationProperties&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Use of &lt;code&gt;@ConfigurationProperties&lt;/code&gt; is a common way to externalize, group, and validate configuration in Spring applications.  &lt;code&gt;@ConfigurationProperties&lt;/code&gt; beans are automatically rebound when application config is refreshed.&lt;/p&gt;
+
+&lt;p&gt;1) Review &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-config/src/main/java/io/pivotal/greeting/GreetingProperties.java&lt;/code&gt;.  Use of the &lt;code&gt;@ConfigurationProperties&lt;/code&gt; annotation allows for reading of configuration values.  Configuration keys are a combination of the &lt;code&gt;prefix&lt;/code&gt; and the field names.  In this case, there is one field (&lt;code&gt;displayFortune&lt;/code&gt;).  Therefore &lt;code&gt;greeting.displayFortune&lt;/code&gt; is used to turn the display of fortunes on/off.  Remaining code is typical getter/setters for the fields.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@ConfigurationProperties(prefix=&amp;quot;greeting&amp;quot;)
+public class GreetingProperties {
+
+	private boolean displayFortune;
+
+	public boolean isDisplayFortune() {
+		return displayFortune;
+	}
+
+	public void setDisplayFortune(boolean displayFortune) {
+		this.displayFortune = displayFortune;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Review &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-config/src/main/java/io/pivotal/greeting/GreetingController.java&lt;/code&gt;.  Note how the &lt;code&gt;greetingProperties.isDisplayFortune()&lt;/code&gt; is used to turn the display of fortunes on/off.  There are times when you want to turn features on/off on demand.  In this case, we want the fortune feature &amp;ldquo;on&amp;rdquo; with our greeting.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@EnableConfigurationProperties(GreetingProperties.class)
+public class GreetingController {
+
+	Logger logger = LoggerFactory
+			.getLogger(GreetingController.class);
+
+
+	@Autowired
+	GreetingProperties greetingProperties;
+
+	@Autowired
+	FortuneService fortuneService;
+
+	@RequestMapping(&amp;quot;/&amp;quot;)
+	String getGreeting(Model model){
+
+		logger.debug(&amp;quot;Adding greeting&amp;quot;);
+		model.addAttribute(&amp;quot;msg&amp;quot;, &amp;quot;Greetings!!!&amp;quot;);
+
+		if(greetingProperties.isDisplayFortune()){
+			logger.debug(&amp;quot;Adding fortune&amp;quot;);
+			model.addAttribute(&amp;quot;fortune&amp;quot;, fortuneService.getFortune());
+		}
+
+		//resolves to the greeting.vm velocity template
+		return &amp;quot;greeting&amp;quot;;
+	}
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Edit your fork of the &lt;code&gt;app-config&lt;/code&gt; repo.   Change &lt;code&gt;greeting.displayFortune&lt;/code&gt; from &lt;code&gt;false&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in the &lt;code&gt;greeting-config.yml&lt;/code&gt; and push the changes back to GitHub.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;logging:
+  level:
+    io:
+      pivotal: DEBUG
+
+greeting:
+  displayFortune: true
+
+quoteServiceURL: http://quote-service-dev.cfapps.io/quote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4) Notify &lt;code&gt;greeting-config&lt;/code&gt; app to pick up the new config by POSTing to the &lt;code&gt;/refresh&lt;/code&gt; endpoint.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -X POST http://localhost:8080/refresh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5) Then refresh the &lt;a href=&#34;http://localhost:8080/&#34;&gt;http://localhost:8080&lt;/a&gt; url and see the fortune included.&lt;/p&gt;
+
+&lt;p&gt;Congratulations! You have turned on a feature using the config-server.&lt;/p&gt;
+
+&lt;h3 id=&#34;reinitializing-beans-with-refreshscope:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Reinitializing Beans with &lt;code&gt;@RefreshScope&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Now you will use the config-server to obtain a service URI rather than hardcoding it your application code.&lt;/p&gt;
+
+&lt;p&gt;Beans annotated with the &lt;code&gt;@RefreshScope&lt;/code&gt; will be recreated when refreshed so they can pick up new config values.&lt;/p&gt;
+
+&lt;p&gt;1) Review &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-config/src/main/java/io/pivotal/quote/QuoteService.java&lt;/code&gt;.  &lt;code&gt;QuoteService.java&lt;/code&gt; uses the &lt;code&gt;@RefreshScope&lt;/code&gt; annotation. Beans with the &lt;code&gt;@RefreshScope&lt;/code&gt; annotation will be recreated when refreshing configuration.  The &lt;code&gt;@Value&lt;/code&gt; annotation allows for injecting the value of the quoteServiceURL configuration parameter.&lt;/p&gt;
+
+&lt;p&gt;In this case, we are using a third party service to get quotes.  We want to keep our environments aligned with the third party.  So we are going to override configuration values by profile (next section).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Service
+@RefreshScope
+public class QuoteService {
+	Logger logger = LoggerFactory
+			.getLogger(QuoteController.class);
+
+	@Value(&amp;quot;${quoteServiceURL}&amp;quot;)
+	private String quoteServiceURL;
+
+	public String getQuoteServiceURI() {
+		return quoteServiceURL;
+	}
+
+	public Quote getQuote(){
+		logger.info(&amp;quot;quoteServiceURL: {}&amp;quot;, quoteServiceURL);
+		RestTemplate restTemplate = new RestTemplate();
+		Quote quote = restTemplate.getForObject(
+				quoteServiceURL, Quote.class);
+		return quote;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Review &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-config/src/main/java/io/pivotal/quote/QuoteController.java&lt;/code&gt;.  &lt;code&gt;QuoteController&lt;/code&gt; calls the &lt;code&gt;QuoteService&lt;/code&gt; for quotes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Controller
+public class QuoteController {
+
+	Logger logger = LoggerFactory
+			.getLogger(QuoteController.class);
+
+	@Autowired
+	private QuoteService quoteService;
+
+	@RequestMapping(&amp;quot;/random-quote&amp;quot;)
+	String getView(Model model) {
+
+		model.addAttribute(&amp;quot;quote&amp;quot;, quoteService.getQuote());
+		model.addAttribute(&amp;quot;uri&amp;quot;, quoteService.getQuoteServiceURI());
+		return &amp;quot;quote&amp;quot;;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) In your browser, hit the &lt;a href=&#34;http://localhost:8080/random-quote&#34;&gt;http://localhost:8080/random-quote&lt;/a&gt; url.&lt;br /&gt;
+Note where the data is being served from: &lt;code&gt;http://quote-service-dev.cfapps.io/quote&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;override-configuration-values-by-profile:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Override Configuration Values By Profile&lt;/h3&gt;
+
+&lt;p&gt;1) Stop the &lt;code&gt;greeting-config&lt;/code&gt; application using Command-C or CTRL-C in the terminal window.&lt;/p&gt;
+
+&lt;p&gt;2) Set the active profile to qa for the &lt;code&gt;greeting-config&lt;/code&gt; application.  In the example below, we use an environment variable to set the active profile.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[mac, linux]
+$ SPRING_PROFILES_ACTIVE=qa mvn clean spring-boot:run
+
+[windows]
+$ set SPRING_PROFILES_ACTIVE=qa
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Make sure the profile is set by browsing to the &lt;a href=&#34;http://localhost:8080/env&#34;&gt;http://localhost:8080/env&lt;/a&gt; endpoint (provided by &lt;code&gt;actuator&lt;/code&gt;).  Under profiles &lt;code&gt;qa&lt;/code&gt; should be listed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;resources/images/profile.png&#34; alt=&#34;profile&#34; title=&#34;qa profile&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3) In your fork of the &lt;code&gt;app-config&lt;/code&gt; repository, create a new file: &lt;code&gt;greeting-config-qa.yml&lt;/code&gt;. Fill it in with the following content:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;quoteServiceURL: http://quote-service-qa.cfapps.io/quote
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make sure to commit and push to GitHub.&lt;/p&gt;
+
+&lt;p&gt;4) Refresh the application configuration values&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -X POST http://localhost:8080/refresh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5) Refresh the &lt;a href=&#34;http://localhost:8080/random-quote&#34;&gt;http://localhost:8080/random-quote&lt;/a&gt; url.  Quotes are now being served from QA.&lt;/p&gt;
+
+&lt;p&gt;6) Stop both the &lt;code&gt;config-server&lt;/code&gt; and &lt;code&gt;greeting-config&lt;/code&gt; applications.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What Just Happened?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Configuration from &lt;code&gt;greeting-config.yml&lt;/code&gt; was overridden by a configuration file that was more specific (&lt;code&gt;greeting-config-qa.yml&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h3 id=&#34;deploy-the-greeting-config-application-to-pcf:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Deploy the &lt;code&gt;greeting-config&lt;/code&gt; Application to PCF&lt;/h3&gt;
+
+&lt;p&gt;1) Package the &lt;code&gt;greeting-config&lt;/code&gt; application. Execute the following from the &lt;code&gt;greeting-config&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ mvn clean package
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Deploy the &lt;code&gt;greeting-config&lt;/code&gt; application to PCF, without starting the application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf push greeting-config -p target/greeting-config-0.0.1-SNAPSHOT.jar -m 512M --random-route --no-start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Create a Config Server Service Instance&lt;/p&gt;
+
+&lt;p&gt;Using Apps Manager do the following (for help review the &lt;a href=&#34;http://docs.pivotal.io/spring-cloud-services/config-server/creating-an-instance.html&#34;&gt;docs&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;a) Log into Apps Manager as a Space Developer. In the Marketplace, select Config Server for Pivotal Cloud Foundry.
+&lt;img src=&#34;resources/images/1_marketplace.png&#34; alt=&#34;marketplace&#34; title=&#34;marketplace&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;b) Select the desired plan for the new service.
+&lt;img src=&#34;resources/images/2_select_plan.png&#34; alt=&#34;select plan&#34; title=&#34;select plan&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;c) Name the service &lt;code&gt;config-server&lt;/code&gt;. Your space may be different.  Click the &lt;strong&gt;&lt;em&gt;Add&lt;/em&gt;&lt;/strong&gt; button.
+&lt;img src=&#34;resources/images/3_configure.png&#34; alt=&#34;configure&#34; title=&#34;configure&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;d) In the &lt;strong&gt;&lt;em&gt;Services&lt;/em&gt;&lt;/strong&gt; list, click the &lt;strong&gt;&lt;em&gt;Manage&lt;/em&gt;&lt;/strong&gt; link under the listing for the new service instance.
+&lt;img src=&#34;resources/images/4_service_successfully_added.png&#34; alt=&#34;service successfully added&#34; title=&#34;service successfully added&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;e) Select a &lt;strong&gt;&lt;em&gt;Configuration Source&lt;/em&gt;&lt;/strong&gt; and enter your fork of the &lt;code&gt;app-config&lt;/code&gt; repo.  Do not use the literal below.
+&lt;img src=&#34;resources/images/dashboard.png&#34; alt=&#34;dashboard&#34; title=&#34;dashboard&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;f) The Config Server instance (&lt;code&gt;config-server&lt;/code&gt;) is now ready to be used.&lt;/p&gt;
+
+&lt;p&gt;4) Bind the &lt;code&gt;config-server&lt;/code&gt; service to the &lt;code&gt;greeting-config&lt;/code&gt; app. This will enable the &lt;code&gt;greeting-config&lt;/code&gt; app to read
+configuration values from the &lt;code&gt;config-server&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf bind-service greeting-config config-server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can safely ignore the &lt;em&gt;TIP: Use &amp;lsquo;cf restage&amp;rsquo; to ensure your env variable changes take effect&lt;/em&gt; message from the CLI.  Our app doesn&amp;rsquo;t need to be restaged at this time.&lt;/p&gt;
+
+&lt;p&gt;5) If using self signed certificates, set the CF_TARGET environment variable to API endpoint of your Elastic Runtime instance.  Make sure to use &lt;code&gt;https://&lt;/code&gt; not &lt;code&gt;http://&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cf set-env greeting-config CF_TARGET &amp;lt;your api endpoint - make sure it starts with &amp;quot;https://&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can safely ignore the &lt;em&gt;TIP: Use &amp;lsquo;cf restage&amp;rsquo; to ensure your env variable changes take effect&lt;/em&gt; message from the CLI.  Our app doesn&amp;rsquo;t need to be restaged at this time.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;All communication between Spring Cloud Services components are made through HTTPS. If you are on an environment that uses self-signed certs, the Java SSL trust store will not have those certificates.  By adding the CF_TARGET environment variable a trusted domain is added to the Java trust store.  Eventually ERS will drop the self-signed certs into every app container, and removing the need to set the CF_TARGET environment variable.&lt;/p&gt;
+
+&lt;p&gt;6) Start the &lt;code&gt;greeting-config&lt;/code&gt; app. The proper environment variables will be set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf start greeting-config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;7) Browse to your &lt;code&gt;greeting-config&lt;/code&gt; application.  Are your configuration settings that were set when developing locally mirrored on PCF?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Is the log level for &lt;code&gt;io.pivotal&lt;/code&gt; package set to &lt;code&gt;DEBUG&lt;/code&gt;?  Yes, this can be confirmed with &lt;code&gt;cf logs&lt;/code&gt; command while refreshing the &lt;code&gt;greeting-config&lt;/code&gt; &lt;code&gt;/&lt;/code&gt; endpoint (&lt;code&gt;http://&amp;lt;your-random-greeting-config-url/&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Is &lt;code&gt;greeting-config&lt;/code&gt; app displaying the fortune?  Yes, this can be confirmed by visiting the &lt;code&gt;greeting-config&lt;/code&gt; &lt;code&gt;/&lt;/code&gt; endpoint.&lt;/li&gt;
+&lt;li&gt;Is the &lt;code&gt;greeting-config&lt;/code&gt; app serving quotes from &lt;code&gt;http://quote-service-qa.cfapps.io/quote&lt;/code&gt;?  No, this can be confirmed by visiting the &lt;code&gt;greeting-config&lt;/code&gt; &lt;code&gt;/random-quote&lt;/code&gt; endpoint.  Why not?  When developing locally we used an environment variable to set the active profile, we need to do the same on PCF.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf set-env greeting-config SPRING_PROFILES_ACTIVE qa
+$ cf restart greeting-config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can safely ignore the &lt;em&gt;TIP: Use &amp;lsquo;cf restage&amp;rsquo; to ensure your env variable changes take effect&lt;/em&gt; message from the CLI.  Our app doesn&amp;rsquo;t need to be restaged but just re-started.&lt;/p&gt;
+
+&lt;p&gt;Then confirm quotes are being served from &lt;code&gt;http://quote-service-qa.cfapps.io/quote&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;refreshing-application-configuration-at-scale-with-cloud-bus:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Refreshing Application Configuration at Scale with Cloud Bus&lt;/h3&gt;
+
+&lt;p&gt;Until now you have been notifying your application to pick up new configuration by POSTing to the &lt;code&gt;/refresh&lt;/code&gt; endpoint.&lt;/p&gt;
+
+&lt;p&gt;When running several instances of your application, this poses several problems:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Refreshing each individual instance is time consuming and too much overhead&lt;/li&gt;
+&lt;li&gt;When running on Cloud Foundry you don&amp;rsquo;t have control over which instances you hit when sending the POST request due to load balancing provided by the &lt;code&gt;router&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cloud Bus addresses the issues listed above by providing a single endpoint to refresh all application instances via a pub/sub notification.&lt;/p&gt;
+
+&lt;p&gt;1) Create a RabbitMQ service instance, bind it to &lt;code&gt;greeting-config&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf cs p-rabbitmq standard cloud-bus
+$ cf bs greeting-config cloud-bus
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can safely ignore the &lt;em&gt;TIP: Use &amp;lsquo;cf restage&amp;rsquo; to ensure your env variable changes take effect&lt;/em&gt; message from the CLI.  Our app doesn&amp;rsquo;t need to be restaged.  We will push it again with new functionality in a moment.&lt;/p&gt;
+
+&lt;p&gt;2) Include the cloud bus dependency in the  &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-config/pom.xml&lt;/code&gt;.  &lt;em&gt;You will need to paste this in your file.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;spring-cloud-starter-bus-amqp&amp;lt;/artifactId&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Repackage the &lt;code&gt;greeting-config&lt;/code&gt; application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ mvn clean package
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4) Deploy the application and scale the number of instances.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf push greeting-config -p target/greeting-config-0.0.1-SNAPSHOT.jar -i 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5) Observe the logs that are generated by refreshing the &lt;code&gt;greeting-config&lt;/code&gt;
+&lt;code&gt;/&lt;/code&gt; endpoint several times in your browser and tailing the logs.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[mac, linux]
+$ cf logs greeting-config | grep GreetingController
+
+[windows]
+$ cf logs greeting-config
+# then search output for &amp;quot;GreetingController&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All app instances are creating debug statements.  Notice the &lt;code&gt;[App/X]&lt;/code&gt;.  It denotes which app instance is logging.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;2015-09-28T20:53:06.07-0500 [App/2]      OUT 2015-09-29 01:53:06.071 DEBUG 34 --- [io-64495-exec-6] io.pivotal.greeting.GreetingController   : Adding fortune
+2015-09-28T20:53:06.16-0500 [App/1]      OUT 2015-09-29 01:53:06.160 DEBUG 33 --- [io-63186-exec-5] io.pivotal.greeting.GreetingController   : Adding greeting
+2015-09-28T20:53:06.16-0500 [App/1]      OUT 2015-09-29 01:53:06.160 DEBUG 33 --- [io-63186-exec-5] io.pivotal.greeting.GreetingController   : Adding fortune
+2015-09-28T20:53:06.24-0500 [App/1]      OUT 2015-09-29 01:53:06.246 DEBUG 33 --- [io-63186-exec-9] io.pivotal.greeting.GreetingController   : Adding greeting
+2015-09-28T20:53:06.24-0500 [App/1]      OUT 2015-09-29 01:53:06.247 DEBUG 33 --- [io-63186-exec-9] io.pivotal.greeting.GreetingController   : Adding fortune
+2015-09-28T20:53:06.41-0500 [App/0]      OUT 2015-09-29 01:53:06.410 DEBUG 33 --- [io-63566-exec-3] io.pivotal.greeting.GreetingController   : Adding greeting
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;7) Turn logging down.  In your fork of the &lt;code&gt;app-config&lt;/code&gt; repo edit the &lt;code&gt;greeting-config.yml&lt;/code&gt;.  Set the log level to &lt;code&gt;INFO&lt;/code&gt;.  Make sure to push back to Github.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;logging:
+  level:
+    io:
+      pivotal: INFO
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;8) Notify applications to pickup the change.  Send a POST to the &lt;code&gt;greeting-config&lt;/code&gt; &lt;code&gt;/bus/refresh&lt;/code&gt; endpoint.  Use your &lt;code&gt;greeting-config&lt;/code&gt; URL not the literal below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -X POST http://greeting-config-hypodermal-subcortex.cfapps.io/bus/refresh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;9) Refresh the &lt;code&gt;greeting-config&lt;/code&gt; &lt;code&gt;/&lt;/code&gt; endpoint several times in your browser.  No more logs!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>goals</title>
+      <link>http://:1313/spring-cloud-config/goals/</link>
+      <pubDate>Sun, 01 Nov 2015 21:36:01 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-config/goals/</guid>
+      <description>
+
+&lt;h2 id=&#34;what-you-will-learn:67219471296bc33b6a375f4239ac14a2&#34;&gt;What You Will Learn&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to set up a git repository to hold configuration data&lt;/li&gt;
+&lt;li&gt;How to set up a config server (&lt;code&gt;config-server&lt;/code&gt;) with a git backend&lt;/li&gt;
+&lt;li&gt;How to set up a client (&lt;code&gt;greeting-config&lt;/code&gt;) to pull configuration from the &lt;code&gt;config-server&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;How to change log levels for a running application (&lt;code&gt;greeting-config&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;How to use &lt;code&gt;@ConfigurationProperties&lt;/code&gt; to capture configuration changes (&lt;code&gt;greeting-config&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;How to use &lt;code&gt;@RefreshScope&lt;/code&gt; to capture configuration changes (&lt;code&gt;greeting-config&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;How to override configuration values by profile (&lt;code&gt;greeting-config&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;How to use Spring Cloud Service to provision and configure a Config Server&lt;/li&gt;
+&lt;li&gt;How to use Cloud Bus to notify applications (&lt;code&gt;greeting-config&lt;/code&gt;) to refresh configuration at scale&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
