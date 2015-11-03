@@ -16,7 +16,58 @@
       <pubDate>Tue, 03 Nov 2015 10:51:37 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/setup/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;lab-requirements:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Lab Requirements&lt;/h2&gt;
+
+&lt;h3 id=&#34;personal-experience:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Personal Experience&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Experience with &lt;a href=&#34;http://pivotal.io/platform&#34;&gt;Pivotal Cloud Foundry&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Experience with &lt;a href=&#34;https://spring.io/&#34;&gt;Spring&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;pivotal-cloud-foundry-environment:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Pivotal Cloud Foundry Environment&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Access to Pivotal Cloud Foundry Environment&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://network.pivotal.io/products/p-spring-cloud-services&#34;&gt;Spring Cloud Services&lt;/a&gt; 1.0.0 Tile Installed&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;6 GB of Memory Quota available&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;local-machine-requirements:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Local machine requirements&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;8GB Memory&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&#34;&gt;JDK 1.8&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation and experience with &lt;a href=&#34;https://git-scm.com/&#34;&gt;git&lt;/a&gt; and&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/&#34;&gt;Github Account&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;http://curl.haxx.se/download.html&#34;&gt;&lt;code&gt;curl&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;https://console.run.pivotal.io/tools&#34;&gt;&lt;code&gt;cf&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;optional-but-recommended:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Optional (but recommended)&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://spring.io/tools&#34;&gt;SpringSource Tool Suite&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en&#34;&gt;Json Formatter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;windows-vm:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Windows VM&lt;/h3&gt;
+
+&lt;p&gt;If using the Windows VM see these &lt;a href=&#34;windows-vm.md&#34;&gt;requirements&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -25,7 +76,12 @@
       <pubDate>Tue, 03 Nov 2015 10:51:33 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/resources/</guid>
-      <description></description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://http://projects.spring.io/spring-cloud/&#34;&gt;Spring Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cloud.spring.io/spring-cloud-netflix/&#34;&gt;Spring Cloud Netflix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://projects.spring.io/spring-cloud/spring-cloud.html&#34;&gt;Spring Cloud Projects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -34,7 +90,156 @@
       <pubDate>Tue, 03 Nov 2015 10:51:29 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/instructions/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;exercises:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Exercises&lt;/h2&gt;
+
+&lt;h3 id=&#34;start-the-config-server-service-registry-and-fortune-service:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Start the  &lt;code&gt;config-server&lt;/code&gt;,  &lt;code&gt;service-registry&lt;/code&gt;, and &lt;code&gt;fortune-service&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;1) Start the &lt;code&gt;config-server&lt;/code&gt; in a terminal window.  You may have terminal windows still open from previous labs.  They may be reused for this lab.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/config-server
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Start the &lt;code&gt;service-registry&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/service-registry
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Start the &lt;code&gt;fortune-service&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/fortune-service
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;set-up-greeting-hystrix:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Set up &lt;code&gt;greeting-hystrix&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;1) Review the &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-hystrix/pom.xml&lt;/code&gt; file.  By adding &lt;code&gt;spring-cloud-services-starter-circuit-breaker&lt;/code&gt; to the classpath this application is eligible to use circuit breakers via Hystrix.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;io.pivotal.spring.cloud&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;spring-cloud-services-starter-circuit-breaker&amp;lt;/artifactId&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Review the following file: &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-hystrix/src/main/java/io/pivotal/GreetingHystrixApplication.java&lt;/code&gt;.  Note the use of the &lt;code&gt;@EnableCircuitBreaker&lt;/code&gt; annotation. This allows the application to create circuit breakers.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@SpringBootApplication
+@EnableDiscoveryClient
+@EnableCircuitBreaker
+public class GreetingHystrixApplication {
+
+
+    public static void main(String[] args) {
+        SpringApplication.run(GreetingHystrixApplication.class, args);
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3). Review the following file: &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-hystrix/src/main/java/io/pivotal/fortune/FortuneService.java&lt;/code&gt;.  Note the use of the &lt;code&gt;@HystrixCommand&lt;/code&gt;.  This is our circuit breaker.  If &lt;code&gt;getFortune()&lt;/code&gt; fails, a fallback method &lt;code&gt;defaultFortune&lt;/code&gt; will be invoked.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Service
+public class FortuneService {
+
+	Logger logger = LoggerFactory
+			.getLogger(FortuneService.class);
+
+	@Autowired
+	@LoadBalanced
+	private RestTemplate restTemplate;
+
+	@HystrixCommand(fallbackMethod = &amp;quot;defaultFortune&amp;quot;)
+	public String getFortune() {
+    String fortune = restTemplate.getForObject(&amp;quot;http://fortune-service&amp;quot;, String.class);
+		return fortune;
+	}
+
+	public String defaultFortune(){
+		logger.debug(&amp;quot;Default fortune used.&amp;quot;);
+		return &amp;quot;This fortune is no good. Try another.&amp;quot;;
+	}
+
+
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4) Open a new terminal window. Start the &lt;code&gt;greeting-hystrix&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/greeting-hystrix
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5) Refresh the &lt;code&gt;greeting-hystrix&lt;/code&gt; &lt;code&gt;/&lt;/code&gt; endpoint.  You should get fortunes from the &lt;code&gt;fortune-service&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;6) Stop the &lt;code&gt;fortune-service&lt;/code&gt;.  And refresh the &lt;code&gt;greeting-hystrix&lt;/code&gt; &lt;code&gt;/&lt;/code&gt; endpoint again.  The default fortune is given.&lt;/p&gt;
+
+&lt;p&gt;7) Restart the &lt;code&gt;fortune-service&lt;/code&gt;.  And refresh the &lt;code&gt;greeting-hystrix&lt;/code&gt; &lt;code&gt;/&lt;/code&gt; endpoint again.  After some time, fortunes from the &lt;code&gt;fortune-service&lt;/code&gt; are back.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What Just Happened?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The circuit breaker insulated &lt;code&gt;greeting-hystrix&lt;/code&gt; from failures when the &lt;code&gt;fortune-service&lt;/code&gt; was not available.  This results in a better experience for our users.&lt;/p&gt;
+
+&lt;h3 id=&#34;set-up-the-greeting-hystrix-metric-stream:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Set up the &lt;code&gt;greeting-hystrix&lt;/code&gt; metric stream&lt;/h3&gt;
+
+&lt;p&gt;Being able to monitor the state of our circuit breakers is highly valuable, but first the &lt;code&gt;greeting-hystrix&lt;/code&gt; application must expose the metrics.&lt;/p&gt;
+
+&lt;p&gt;This is accomplished by including the &lt;code&gt;actuator&lt;/code&gt; dependency in the &lt;code&gt;greeting-hystrix&lt;/code&gt; &lt;code&gt;pom.xml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;1) Review the &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-hystrix/pom.xml&lt;/code&gt; file.  By adding &lt;code&gt;spring-boot-starter-actuator&lt;/code&gt; to the classpath this application will publish metrics at the &lt;code&gt;/hystrix.stream&lt;/code&gt; endpoint.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;spring-boot-starter-actuator&amp;lt;/artifactId&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Browse to &lt;a href=&#34;http://localhost:8080/hystrix.stream&#34;&gt;http://localhost:8080/hystrix.stream&lt;/a&gt; to review the metric stream.
+&lt;img src=&#34;http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/spring-cloud-services-spring-cloud-netflix-circuit-breaking/resources/images/hystrix-stream.png&#34; alt=&#34;hystrix-stream&#34; title=&#34;hystrix-stream&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;set-up-hystrix-dashboard:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Set up &lt;code&gt;hystrix-dashboard&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Consuming the metric stream is difficult to interpret on our own.  The metric stream can be visualized with the Hystrix Dashboard.&lt;/p&gt;
+
+&lt;p&gt;1) Review the &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/hystrix-dashboard/pom.xml&lt;/code&gt; file.  By adding &lt;code&gt;spring-cloud-starter-hystrix-dashboard&lt;/code&gt; to the classpath this application is exposes a Hystrix Dashboard.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;spring-cloud-starter-hystrix-dashboard&amp;lt;/artifactId&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Review the following file: &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/hystrix-dashboard/src/main/java/io/pivotal/HystrixDashboardApplication.java&lt;/code&gt;.  Note the use of the &lt;code&gt;@EnableHystrixDashboard&lt;/code&gt; annotation. This creates a Hystrix Dashboard.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@SpringBootApplication
+@EnableHystrixDashboard
+public class HystrixDashboardApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(HystrixDashboardApplication.class, args);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Open a new terminal window. Start the &lt;code&gt;hystrix-dashboard&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/hystrix-dashboard
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4) Open a browser to &lt;a href=&#34;http://localhost:8686/hystrix&#34;&gt;http://localhost:8686/hystrix&lt;/a&gt;
+&lt;img src=&#34;http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/spring-cloud-services-spring-cloud-netflix-circuit-breaking/resources/images/hystrix-dashboard.png&#34; alt=&#34;hystrix-dashboard&#34; title=&#34;hystrix-dashboard&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;5) Link the &lt;code&gt;hystrix-dashboard&lt;/code&gt; to the &lt;code&gt;greeting-hystrix&lt;/code&gt; app.  Enter &lt;code&gt;http://localhost:8080/hystrix.stream&lt;/code&gt; as the stream to monitor.&lt;/p&gt;
+
+&lt;p&gt;6) Experiment! Refresh the &lt;code&gt;greeting-hystrix&lt;/code&gt; &lt;code&gt;/&lt;/code&gt; endpoint several times.  Take down the &lt;code&gt;fortune-service&lt;/code&gt; app.  What does the dashboard do?  Review the &lt;a href=&#34;https://github.com/Netflix/Hystrix/wiki/Dashboard&#34;&gt;dashboard doc&lt;/a&gt; for an explanation on metrics.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/spring-cloud-services-spring-cloud-netflix-circuit-breaking/resources/images/dashboard-activity.png&#34; alt=&#34;dashboard-activity&#34; title=&#34;dashboard-activity&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -43,7 +248,16 @@
       <pubDate>Tue, 03 Nov 2015 10:51:23 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/goals/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;what-you-will-learn:67219471296bc33b6a375f4239ac14a2&#34;&gt;What You Will Learn&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to protect your application (&lt;code&gt;greeting-hystrix&lt;/code&gt;) from failures or latency with the circuit breaking pattern&lt;/li&gt;
+&lt;li&gt;How to publish circuit-breaking metrics from your application (&lt;code&gt;greeting-hystrix&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;How to consume metric streams with the &lt;code&gt;hystrix-dashboard&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -52,7 +266,14 @@
       <pubDate>Tue, 03 Nov 2015 10:51:16 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/_index/</guid>
-      <description></description>
+      <description>&lt;p&gt;In this workshop, we will use &lt;a href=&#34;http://cloud.spring.io/spring-cloud-netflix/&#34;&gt;Spring Cloud Netflix&lt;/a&gt; to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Protect your application (&lt;code&gt;greeting-hystrix&lt;/code&gt;) from failures or latency with the circuit breaking pattern&lt;/li&gt;
+&lt;li&gt;Publish circuit-breaking metrics from your application (&lt;code&gt;greeting-hystrix&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Consume metric streams with the &lt;code&gt;hystrix-dashboard&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>
