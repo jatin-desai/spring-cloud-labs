@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Spring Cloud Netflix: Circuit Breaking Metric Aggregation">
 		<link rel="icon" href="/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/favicon.ico">
-		<title>instructions - Spring Cloud Netflix: Circuit Breaking Metric Aggregation</title>
+		<title>Instructions - Spring Cloud Netflix: Circuit Breaking Metric Aggregation</title>
 		<link rel="stylesheet" href="/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/css/highlight.js.min.css">
 		<link rel="stylesheet" href="/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/css/bootstrap-theme.css">
@@ -65,9 +65,22 @@
 		<div class="sidebar-toc">
 			<h4>Table of Contents</h4>
 			<ul>
-				<li><strong><a href="#title">instructions</a></strong></li>
+				<li><strong><a href="#title">Instructions</a></strong></li>
 			</ul>
-			
+			<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#exercises:22b1984e9055744bcb6b52260dfdfb71">Exercises</a>
+<ul>
+<li><a href="#start-the-config-server-service-registry-fortune-service-greeting-hystrix-and-hystrix-dashboard-applications:22b1984e9055744bcb6b52260dfdfb71">Start the  <code>config-server</code>,  <code>service-registry</code>, <code>fortune-service</code>, <code>greeting-hystrix</code>, and <code>hystrix-dashboard</code> applications</a></li>
+<li><a href="#set-up-turbine:22b1984e9055744bcb6b52260dfdfb71">Set up <code>turbine</code></a></li>
+<li><a href="#deploying-to-pcf:22b1984e9055744bcb6b52260dfdfb71">Deploying to PCF</a></li>
+<li><a href="#deploy-greeting-hystrix-to-pcf:22b1984e9055744bcb6b52260dfdfb71">Deploy <code>greeting-hystrix</code> to PCF</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 		</div>
 	</div>
 </div>
@@ -76,12 +89,166 @@
 			<main role="main">
 				<article>
 					<a id="title"></a>
-					<h1 class="doc-entry-title">instructions</h1>
+					<h1 class="doc-entry-title">Instructions</h1>
 					<div class="doc-entry-meta">
 						<span><time datetime="2015-11-03">November 03, 2015</time></span>
 					</div>
 					<section>
 						
+
+<h2 id="exercises:22b1984e9055744bcb6b52260dfdfb71">Exercises</h2>
+
+<h3 id="start-the-config-server-service-registry-fortune-service-greeting-hystrix-and-hystrix-dashboard-applications:22b1984e9055744bcb6b52260dfdfb71">Start the  <code>config-server</code>,  <code>service-registry</code>, <code>fortune-service</code>, <code>greeting-hystrix</code>, and <code>hystrix-dashboard</code> applications</h3>
+
+<p>1) Start the <code>config-server</code> in a terminal window.  You may have terminal windows still open from previous labs.  They may be reused for this lab.</p>
+
+<pre><code class="language-bash">$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/config-server
+$ mvn clean spring-boot:run
+</code></pre>
+
+<p>2) Start the <code>service-registry</code></p>
+
+<pre><code class="language-bash">$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/service-registry
+$ mvn clean spring-boot:run
+</code></pre>
+
+<p>3) Start the <code>fortune-service</code></p>
+
+<pre><code class="language-bash">$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/fortune-service
+$ mvn clean spring-boot:run
+</code></pre>
+
+<p>4) Start the <code>greeting-hystrix</code></p>
+
+<pre><code class="language-bash">$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/greeting-hystrix
+$ mvn clean spring-boot:run
+</code></pre>
+
+<p>5) Start the <code>hystrix-dashboard</code></p>
+
+<pre><code class="language-bash">$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/hystrix-dashboard
+$ mvn clean spring-boot:run
+</code></pre>
+
+<p>Allow a few moments for <code>greeting-hystrix</code> and <code>fortune-service</code> to register with the <code>service-registry</code>.</p>
+
+<h3 id="set-up-turbine:22b1984e9055744bcb6b52260dfdfb71">Set up <code>turbine</code></h3>
+
+<p>Looking at individual application instances in the Hystrix Dashboard is not very useful in terms of understanding the overall health of the system. Turbine is an application that aggregates all of the relevant <code>/hystrix.stream</code> endpoints into a combined <code>/turbine.stream</code> for use in the Hystrix Dashboard.</p>
+
+<p>1) Review the <code>$SPRING_CLOUD_SERVICES_LABS_HOME/turbine/pom.xml</code> file.  By adding <code>spring-cloud-starter-turbine</code> to the classpath this application is eligible to aggregate metrics via Turbine.</p>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-starter-turbine&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>2) Review the following file: <code>$SPRING_CLOUD_SERVICES_LABS_HOME/turbine/src/main/java/io/pivotal/TurbineApplication.java</code>.  Note the use of the <code>@EnableTurbine</code> annotation. This creates a turbine application.</p>
+
+<pre><code class="language-java">@SpringBootApplication
+@EnableTurbine
+public class TurbineApplication {
+
+
+    public static void main(String[] args) {
+        SpringApplication.run(TurbineApplication.class, args);
+    }
+
+}
+</code></pre>
+
+<p>3). Review the following file: <code>$SPRING_CLOUD_SERVICES_LABS_HOME/turbine/src/main/resources/bootstrap.yml</code>.  <code>turbine.appConfig</code> is a list of Eureka <code>serviceIds</code> that Turbine will use to lookup instances.  <code>turbine.aggregator.clusterConfig</code> is the Turbine cluster these services belong to (how they will be grouped).</p>
+
+<pre><code class="language-yml">spring:
+  application:
+    name: turbine
+turbine:
+  aggregator:
+    clusterConfig: GREETING-HYSTRIX
+  appConfig: greeting-hystrix
+</code></pre>
+
+<p>4) Open a new terminal window. Start the <code>turbine</code> app</p>
+
+<pre><code class="language-bash">$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/turbine
+$ mvn clean spring-boot:run
+</code></pre>
+
+<p>5) Wait for the <code>turbine</code> application to register with <a href="http://localhost:8761/"><code>service-registry</code></a>.</p>
+
+<p>6) View the turbine stream in a browser <a href="http://localhost:8585/turbine.stream?cluster=GREETING-HYSTRIX">http://localhost:8585/turbine.stream?cluster=GREETING-HYSTRIX</a>
+<img src="/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/resources/images/turbine-stream.png" alt="turbine-stream" title="turbine-stream" /></p>
+
+<p>7) Configure the <a href="http://localhost:8686/hystrix"><code>hystrix-dashboard</code></a> to consume the turbine stream.  Enter <code>http://localhost:8585/turbine.stream?cluster=GREETING-HYSTRIX</code></p>
+
+<p>8) Experiment! Refresh the <code>greeting-hystrix</code> <code>/</code> endpoint several times.  Take down the <code>fortune-service</code> app.  What does the dashboard do?</p>
+
+<p>9) When done, stop the <code>config-server</code>, <code>service-registry</code>, <code>fortune-service</code>, <code>greeting-hystrix</code>, <code>hystrix-dashboard</code> and <code>turbine</code> applications.</p>
+
+<p><strong><em>What Just Happened?</em></strong></p>
+
+<p>Turbine discovered the <code>greeting-hystrix</code> application through the <code>service-registry</code> application.  Turbine then consumed the <code>/hystrix.stream</code> and rolled that up into an aggregate <code>/turbine.stream</code>.  Therefore, if we had multiple <code>greeting-hystrix</code> applications running all the metrics could be consumed from this single endpoint (<code>/turbine.stream</code>)</p>
+
+<h3 id="deploying-to-pcf:22b1984e9055744bcb6b52260dfdfb71">Deploying to PCF</h3>
+
+<p>In PCF, the traditional Turbine model of pulling metrics from all the distributed Hystrix enabled applications via HTTP doesn’t work when using the <code>route</code> registrationMethod.  Read <a href="http://docs.pivotal.io/spring-cloud-services/service-registry/registering-a-service.html">here</a> for more details on registration methods.</p>
+
+<p>When applications register using the <code>route</code> method every application has the same <code>hostname</code> (every app instance has the same URL for a given app).  Therefore it is unknown from Turbine perspective if all metrics are properly being collected.  The problem is solved with Turbine AMQP.  Metrics are published through a message broker.  We&rsquo;ll use RabbitMQ.</p>
+
+<h3 id="deploy-greeting-hystrix-to-pcf:22b1984e9055744bcb6b52260dfdfb71">Deploy <code>greeting-hystrix</code> to PCF</h3>
+
+<p>1) Create a Circuit Breaker Dashboard Service Instance</p>
+
+<pre><code class="language-bash">$ cf create-service p-circuit-breaker-dashboard standard circuit-breaker-dashboard
+</code></pre>
+
+<p>When creating a Circuit Breaker Service instance there are three items that get provisioned:</p>
+
+<ol>
+<li>Hystrix Dashboard application instance</li>
+<li>Turbine AMQP application instance</li>
+<li>RabbitMQ Service Instance</li>
+</ol>
+
+<p>This process takes some time and won&rsquo;t be immediately available for binding.  Give it a couple of minutes.</p>
+
+<p>Click on the <strong><em>Manage</em></strong> link for the <code>circuit-breaker-dashboard</code> service instance to determine when the <code>circuit-breaker-dashboard</code> service instance is ready.
+<img src="/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/resources/images/manage.png" alt="manage" title="manage" /></p>
+
+<p>2) Package and push the <code>greeting-hystrix</code> application.</p>
+
+<pre><code class="language-bash">$ mvn clean package
+$ cf push greeting-hystrix -p target/greeting-hystrix-0.0.1-SNAPSHOT.jar -m 512M --random-route --no-start
+</code></pre>
+
+<p>3) Bind services for the <code>greeting-hystrix</code>.</p>
+
+<pre><code class="language-bash">$ cf bind-service greeting-hystrix config-server
+$ cf bind-service greeting-hystrix service-registry
+$ cf bind-service greeting-hystrix circuit-breaker-dashboard
+</code></pre>
+
+<p>You can safely ignore the <em>TIP: Use &lsquo;cf restage&rsquo; to ensure your env variable changes take effect</em> message from the CLI.  We don&rsquo;t need to restage at this time.</p>
+
+<p>4) If using self signed certificates, set the <code>CF_TARGET</code> environment variable for the <code>greeting-hystrix</code> application.</p>
+
+<pre><code class="language-bash">$ cf set-env greeting-hystrix CF_TARGET &lt;your api endpoint - make sure it starts with &quot;https://&quot;&gt;
+</code></pre>
+
+<p>You can safely ignore the <em>TIP: Use &lsquo;cf restage&rsquo; to ensure your env variable changes take effect</em> message from the CLI.  We don&rsquo;t need to restage at this time.</p>
+
+<p>5) Start the <code>greeting-hystrix</code> app.</p>
+
+<pre><code class="language-bash">$ cf start greeting-hystrix
+</code></pre>
+
+<p>6) Experiment! Refresh the <code>greeting-hystrix</code> / endpoint several times. Take down the fortune-service app. Scale the greeting-hystrix app. What does the dashboard do?</p>
+
+<p><strong><em>What Just Happened?</em></strong></p>
+
+<p>The <code>greeting-hystrix</code> application is publishing metrics via AMQP to RabbitMQ (this can be discovered by looking at <code>VCAP_SERVICES</code>).  Those metrics are then consumed and aggregated by Turbine.  The Circuit Breaker Dashboard then consumes the Turbine endpoint.  All of this detail has been abstracted away by using the PCF Circuit Breaker Dashboard Service.</p>
+
 					</section>
 				</article>
 			</main>

@@ -11,39 +11,257 @@
     <atom:link href="http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>setup</title>
+      <title>Setup</title>
       <link>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/setup/</link>
       <pubDate>Tue, 03 Nov 2015 11:08:14 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/setup/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;lab-requirements:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Lab Requirements&lt;/h2&gt;
+
+&lt;h3 id=&#34;personal-experience:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Personal Experience&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Experience with &lt;a href=&#34;http://pivotal.io/platform&#34;&gt;Pivotal Cloud Foundry&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Experience with &lt;a href=&#34;https://spring.io/&#34;&gt;Spring&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;pivotal-cloud-foundry-environment:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Pivotal Cloud Foundry Environment&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Access to Pivotal Cloud Foundry Environment&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://network.pivotal.io/products/p-spring-cloud-services&#34;&gt;Spring Cloud Services&lt;/a&gt; 1.0.0 Tile Installed&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;6 GB of Memory Quota available&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;local-machine-requirements:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Local machine requirements&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;8GB Memory&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&#34;&gt;JDK 1.8&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation and experience with &lt;a href=&#34;https://git-scm.com/&#34;&gt;git&lt;/a&gt; and&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/&#34;&gt;Github Account&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;http://curl.haxx.se/download.html&#34;&gt;&lt;code&gt;curl&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;https://console.run.pivotal.io/tools&#34;&gt;&lt;code&gt;cf&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;optional-but-recommended:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Optional (but recommended)&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://spring.io/tools&#34;&gt;SpringSource Tool Suite&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en&#34;&gt;Json Formatter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;windows-vm:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Windows VM&lt;/h3&gt;
+
+&lt;p&gt;If using the Windows VM see these &lt;a href=&#34;windows-vm.md&#34;&gt;requirements&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>resources</title>
+      <title>Resources</title>
       <link>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/resources/</link>
       <pubDate>Tue, 03 Nov 2015 11:08:11 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/resources/</guid>
-      <description></description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://http://projects.spring.io/spring-cloud/&#34;&gt;Spring Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cloud.spring.io/spring-cloud-netflix/&#34;&gt;Spring Cloud Netflix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://projects.spring.io/spring-cloud/spring-cloud.html&#34;&gt;Spring Cloud Projects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
-      <title>instructions</title>
+      <title>Instructions</title>
       <link>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/instructions/</link>
       <pubDate>Tue, 03 Nov 2015 11:08:07 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/instructions/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;exercises:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Exercises&lt;/h2&gt;
+
+&lt;h3 id=&#34;start-the-config-server-service-registry-fortune-service-greeting-hystrix-and-hystrix-dashboard-applications:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Start the  &lt;code&gt;config-server&lt;/code&gt;,  &lt;code&gt;service-registry&lt;/code&gt;, &lt;code&gt;fortune-service&lt;/code&gt;, &lt;code&gt;greeting-hystrix&lt;/code&gt;, and &lt;code&gt;hystrix-dashboard&lt;/code&gt; applications&lt;/h3&gt;
+
+&lt;p&gt;1) Start the &lt;code&gt;config-server&lt;/code&gt; in a terminal window.  You may have terminal windows still open from previous labs.  They may be reused for this lab.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/config-server
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Start the &lt;code&gt;service-registry&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/service-registry
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Start the &lt;code&gt;fortune-service&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/fortune-service
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4) Start the &lt;code&gt;greeting-hystrix&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/greeting-hystrix
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5) Start the &lt;code&gt;hystrix-dashboard&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/hystrix-dashboard
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Allow a few moments for &lt;code&gt;greeting-hystrix&lt;/code&gt; and &lt;code&gt;fortune-service&lt;/code&gt; to register with the &lt;code&gt;service-registry&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;set-up-turbine:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Set up &lt;code&gt;turbine&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Looking at individual application instances in the Hystrix Dashboard is not very useful in terms of understanding the overall health of the system. Turbine is an application that aggregates all of the relevant &lt;code&gt;/hystrix.stream&lt;/code&gt; endpoints into a combined &lt;code&gt;/turbine.stream&lt;/code&gt; for use in the Hystrix Dashboard.&lt;/p&gt;
+
+&lt;p&gt;1) Review the &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/turbine/pom.xml&lt;/code&gt; file.  By adding &lt;code&gt;spring-cloud-starter-turbine&lt;/code&gt; to the classpath this application is eligible to aggregate metrics via Turbine.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;spring-cloud-starter-turbine&amp;lt;/artifactId&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Review the following file: &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/turbine/src/main/java/io/pivotal/TurbineApplication.java&lt;/code&gt;.  Note the use of the &lt;code&gt;@EnableTurbine&lt;/code&gt; annotation. This creates a turbine application.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@SpringBootApplication
+@EnableTurbine
+public class TurbineApplication {
+
+
+    public static void main(String[] args) {
+        SpringApplication.run(TurbineApplication.class, args);
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3). Review the following file: &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/turbine/src/main/resources/bootstrap.yml&lt;/code&gt;.  &lt;code&gt;turbine.appConfig&lt;/code&gt; is a list of Eureka &lt;code&gt;serviceIds&lt;/code&gt; that Turbine will use to lookup instances.  &lt;code&gt;turbine.aggregator.clusterConfig&lt;/code&gt; is the Turbine cluster these services belong to (how they will be grouped).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;spring:
+  application:
+    name: turbine
+turbine:
+  aggregator:
+    clusterConfig: GREETING-HYSTRIX
+  appConfig: greeting-hystrix
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4) Open a new terminal window. Start the &lt;code&gt;turbine&lt;/code&gt; app&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/turbine
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5) Wait for the &lt;code&gt;turbine&lt;/code&gt; application to register with &lt;a href=&#34;http://localhost:8761/&#34;&gt;&lt;code&gt;service-registry&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;6) View the turbine stream in a browser &lt;a href=&#34;http://localhost:8585/turbine.stream?cluster=GREETING-HYSTRIX&#34;&gt;http://localhost:8585/turbine.stream?cluster=GREETING-HYSTRIX&lt;/a&gt;
+&lt;img src=&#34;http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/resources/images/turbine-stream.png&#34; alt=&#34;turbine-stream&#34; title=&#34;turbine-stream&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;7) Configure the &lt;a href=&#34;http://localhost:8686/hystrix&#34;&gt;&lt;code&gt;hystrix-dashboard&lt;/code&gt;&lt;/a&gt; to consume the turbine stream.  Enter &lt;code&gt;http://localhost:8585/turbine.stream?cluster=GREETING-HYSTRIX&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;8) Experiment! Refresh the &lt;code&gt;greeting-hystrix&lt;/code&gt; &lt;code&gt;/&lt;/code&gt; endpoint several times.  Take down the &lt;code&gt;fortune-service&lt;/code&gt; app.  What does the dashboard do?&lt;/p&gt;
+
+&lt;p&gt;9) When done, stop the &lt;code&gt;config-server&lt;/code&gt;, &lt;code&gt;service-registry&lt;/code&gt;, &lt;code&gt;fortune-service&lt;/code&gt;, &lt;code&gt;greeting-hystrix&lt;/code&gt;, &lt;code&gt;hystrix-dashboard&lt;/code&gt; and &lt;code&gt;turbine&lt;/code&gt; applications.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What Just Happened?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Turbine discovered the &lt;code&gt;greeting-hystrix&lt;/code&gt; application through the &lt;code&gt;service-registry&lt;/code&gt; application.  Turbine then consumed the &lt;code&gt;/hystrix.stream&lt;/code&gt; and rolled that up into an aggregate &lt;code&gt;/turbine.stream&lt;/code&gt;.  Therefore, if we had multiple &lt;code&gt;greeting-hystrix&lt;/code&gt; applications running all the metrics could be consumed from this single endpoint (&lt;code&gt;/turbine.stream&lt;/code&gt;)&lt;/p&gt;
+
+&lt;h3 id=&#34;deploying-to-pcf:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Deploying to PCF&lt;/h3&gt;
+
+&lt;p&gt;In PCF, the traditional Turbine model of pulling metrics from all the distributed Hystrix enabled applications via HTTP doesn’t work when using the &lt;code&gt;route&lt;/code&gt; registrationMethod.  Read &lt;a href=&#34;http://docs.pivotal.io/spring-cloud-services/service-registry/registering-a-service.html&#34;&gt;here&lt;/a&gt; for more details on registration methods.&lt;/p&gt;
+
+&lt;p&gt;When applications register using the &lt;code&gt;route&lt;/code&gt; method every application has the same &lt;code&gt;hostname&lt;/code&gt; (every app instance has the same URL for a given app).  Therefore it is unknown from Turbine perspective if all metrics are properly being collected.  The problem is solved with Turbine AMQP.  Metrics are published through a message broker.  We&amp;rsquo;ll use RabbitMQ.&lt;/p&gt;
+
+&lt;h3 id=&#34;deploy-greeting-hystrix-to-pcf:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Deploy &lt;code&gt;greeting-hystrix&lt;/code&gt; to PCF&lt;/h3&gt;
+
+&lt;p&gt;1) Create a Circuit Breaker Dashboard Service Instance&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf create-service p-circuit-breaker-dashboard standard circuit-breaker-dashboard
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When creating a Circuit Breaker Service instance there are three items that get provisioned:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Hystrix Dashboard application instance&lt;/li&gt;
+&lt;li&gt;Turbine AMQP application instance&lt;/li&gt;
+&lt;li&gt;RabbitMQ Service Instance&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This process takes some time and won&amp;rsquo;t be immediately available for binding.  Give it a couple of minutes.&lt;/p&gt;
+
+&lt;p&gt;Click on the &lt;strong&gt;&lt;em&gt;Manage&lt;/em&gt;&lt;/strong&gt; link for the &lt;code&gt;circuit-breaker-dashboard&lt;/code&gt; service instance to determine when the &lt;code&gt;circuit-breaker-dashboard&lt;/code&gt; service instance is ready.
+&lt;img src=&#34;http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/resources/images/manage.png&#34; alt=&#34;manage&#34; title=&#34;manage&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2) Package and push the &lt;code&gt;greeting-hystrix&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ mvn clean package
+$ cf push greeting-hystrix -p target/greeting-hystrix-0.0.1-SNAPSHOT.jar -m 512M --random-route --no-start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Bind services for the &lt;code&gt;greeting-hystrix&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf bind-service greeting-hystrix config-server
+$ cf bind-service greeting-hystrix service-registry
+$ cf bind-service greeting-hystrix circuit-breaker-dashboard
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can safely ignore the &lt;em&gt;TIP: Use &amp;lsquo;cf restage&amp;rsquo; to ensure your env variable changes take effect&lt;/em&gt; message from the CLI.  We don&amp;rsquo;t need to restage at this time.&lt;/p&gt;
+
+&lt;p&gt;4) If using self signed certificates, set the &lt;code&gt;CF_TARGET&lt;/code&gt; environment variable for the &lt;code&gt;greeting-hystrix&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf set-env greeting-hystrix CF_TARGET &amp;lt;your api endpoint - make sure it starts with &amp;quot;https://&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can safely ignore the &lt;em&gt;TIP: Use &amp;lsquo;cf restage&amp;rsquo; to ensure your env variable changes take effect&lt;/em&gt; message from the CLI.  We don&amp;rsquo;t need to restage at this time.&lt;/p&gt;
+
+&lt;p&gt;5) Start the &lt;code&gt;greeting-hystrix&lt;/code&gt; app.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf start greeting-hystrix
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;6) Experiment! Refresh the &lt;code&gt;greeting-hystrix&lt;/code&gt; / endpoint several times. Take down the fortune-service app. Scale the greeting-hystrix app. What does the dashboard do?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What Just Happened?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;greeting-hystrix&lt;/code&gt; application is publishing metrics via AMQP to RabbitMQ (this can be discovered by looking at &lt;code&gt;VCAP_SERVICES&lt;/code&gt;).  Those metrics are then consumed and aggregated by Turbine.  The Circuit Breaker Dashboard then consumes the Turbine endpoint.  All of this detail has been abstracted away by using the PCF Circuit Breaker Dashboard Service.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>goals</title>
+      <title>Goals</title>
       <link>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/goals/</link>
       <pubDate>Tue, 03 Nov 2015 11:07:59 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/goals/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;what-you-will-learn:67219471296bc33b6a375f4239ac14a2&#34;&gt;What You Will Learn&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to aggregate multiple metric streams with &lt;code&gt;turbine&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;How to use Turbine in Pivotal Cloud Foundry&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -52,7 +270,13 @@
       <pubDate>Tue, 03 Nov 2015 11:07:52 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/_index/</guid>
-      <description></description>
+      <description>&lt;p&gt;In this workshop, we will use &lt;a href=&#34;http://cloud.spring.io/spring-cloud-netflix/&#34;&gt;Spring Cloud Netflix&lt;/a&gt; to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Aggregate multiple metric streams with &lt;code&gt;turbine&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use Turbine in Pivotal Cloud Foundry&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>
