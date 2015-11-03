@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/</loc>
+    <lastmod>2015-11-03T11:08:14-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/setup/</loc>
+    <lastmod>2015-11-03T11:08:14-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/resources/</loc>
+    <lastmod>2015-11-03T11:08:11-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/instructions/</loc>
+    <lastmod>2015-11-03T11:08:07-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/goals/</loc>
+    <lastmod>2015-11-03T11:07:59-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking-metric-aggregation/_index/</loc>
+    <lastmod>2015-11-03T11:07:52-08:00</lastmod>
+  </url>
+  
+</urlset>
