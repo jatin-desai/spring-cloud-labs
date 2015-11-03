@@ -6,7 +6,7 @@ title = "\u005findex"
 
 In this workshop, we will use [Spring Cloud Netflix](http://cloud.spring.io/spring-cloud-netflix/) to
 
-* How to embed Eureka in a Spring Boot application
-* How to register services (`greeting-service` and `fortune-service`) with Eureka
-* How to discover services (`fortune-service`) with Eureka
-* How to use Spring Cloud Services to provision a Service Registry
+* Embed Eureka in a Spring Boot application
+* Register services (`greeting-service` and `fortune-service`) with Eureka
+* Discover services (`fortune-service`) with Eureka
+* Use Spring Cloud Services to provision a Service Registry

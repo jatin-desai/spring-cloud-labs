@@ -16,7 +16,58 @@
       <pubDate>Tue, 03 Nov 2015 10:36:47 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-client-side-load-balancing/setup/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;lab-requirements:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Lab Requirements&lt;/h2&gt;
+
+&lt;h3 id=&#34;personal-experience:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Personal Experience&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Experience with &lt;a href=&#34;http://pivotal.io/platform&#34;&gt;Pivotal Cloud Foundry&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Experience with &lt;a href=&#34;https://spring.io/&#34;&gt;Spring&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;pivotal-cloud-foundry-environment:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Pivotal Cloud Foundry Environment&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Access to Pivotal Cloud Foundry Environment&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://network.pivotal.io/products/p-spring-cloud-services&#34;&gt;Spring Cloud Services&lt;/a&gt; 1.0.0 Tile Installed&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;6 GB of Memory Quota available&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;local-machine-requirements:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Local machine requirements&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;8GB Memory&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&#34;&gt;JDK 1.8&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation and experience with &lt;a href=&#34;https://git-scm.com/&#34;&gt;git&lt;/a&gt; and&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/&#34;&gt;Github Account&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;http://curl.haxx.se/download.html&#34;&gt;&lt;code&gt;curl&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;https://console.run.pivotal.io/tools&#34;&gt;&lt;code&gt;cf&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;optional-but-recommended:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Optional (but recommended)&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://spring.io/tools&#34;&gt;SpringSource Tool Suite&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en&#34;&gt;Json Formatter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;windows-vm:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Windows VM&lt;/h3&gt;
+
+&lt;p&gt;If using the Windows VM see these &lt;a href=&#34;windows-vm.md&#34;&gt;requirements&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -25,7 +76,12 @@
       <pubDate>Tue, 03 Nov 2015 10:36:44 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-client-side-load-balancing/resources/</guid>
-      <description></description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://http://projects.spring.io/spring-cloud/&#34;&gt;Spring Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cloud.spring.io/spring-cloud-netflix/&#34;&gt;Spring Cloud Netflix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://projects.spring.io/spring-cloud/spring-cloud.html&#34;&gt;Spring Cloud Projects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -34,7 +90,187 @@
       <pubDate>Tue, 03 Nov 2015 10:36:39 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-client-side-load-balancing/instructions/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;exercises:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Exercises&lt;/h2&gt;
+
+&lt;h3 id=&#34;start-the-config-server-service-registry-and-fortune-service:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Start the  &lt;code&gt;config-server&lt;/code&gt;,  &lt;code&gt;service-registry&lt;/code&gt;, and &lt;code&gt;fortune-service&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;1) Start the &lt;code&gt;config-server&lt;/code&gt; in a terminal window.  You may have terminal windows still open from previous labs.  They may be reused for this lab.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/config-server
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Start the &lt;code&gt;service-registry&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/service-registry
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Start the &lt;code&gt;fortune-service&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/fortune-service
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;set-up-greeting-ribbon:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Set up &lt;code&gt;greeting-ribbon&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;No additions to the pom.xml&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In this case, we don&amp;rsquo;t need to explicitly include Ribbon support in the &lt;code&gt;pom.xml&lt;/code&gt;.  Ribbon support is pulled in through transitive dependencies (dependencies of the dependencies we have already defined).&lt;/p&gt;
+
+&lt;p&gt;1) Review the the following file: &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-ribbon/src/main/java/io/pivotal/greeting/GreetingController.java&lt;/code&gt;.  Notice the &lt;code&gt;loadBalancerClient&lt;/code&gt;.  It is a client side load balancer (Ribbon).  Review the &lt;code&gt;fetchFortuneServiceUrl()&lt;/code&gt; method.  Ribbon is integrated with Eureka so that it can discover services as well.  Notice how the &lt;code&gt;loadBalancerClient&lt;/code&gt; chooses a service instance by name.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Controller
+public class GreetingController {
+
+	Logger logger = LoggerFactory
+			.getLogger(GreetingController.class);
+
+
+
+
+	@Autowired
+	private LoadBalancerClient loadBalancerClient;
+
+	@RequestMapping(&amp;quot;/&amp;quot;)
+	String getGreeting(Model model){
+
+		logger.debug(&amp;quot;Adding greeting&amp;quot;);
+		model.addAttribute(&amp;quot;msg&amp;quot;, &amp;quot;Greetings!!!&amp;quot;);
+
+
+		RestTemplate restTemplate = new RestTemplate();
+        String fortune = restTemplate.getForObject(fetchFortuneServiceUrl(), String.class);
+
+		logger.debug(&amp;quot;Adding fortune&amp;quot;);
+		model.addAttribute(&amp;quot;fortune&amp;quot;, fortune);
+
+		//resolves to the greeting.vm velocity template
+		return &amp;quot;greeting&amp;quot;;
+	}
+
+	private String fetchFortuneServiceUrl() {
+	    ServiceInstance instance = loadBalancerClient.choose(&amp;quot;fortune-service&amp;quot;);
+
+	    logger.debug(&amp;quot;uri: {}&amp;quot;,instance.getUri().toString());
+	    logger.debug(&amp;quot;serviceId: {}&amp;quot;, instance.getServiceId());
+
+
+	    return instance.getUri().toString();
+	}
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Open a new terminal window.  Start the &lt;code&gt;greeting-ribbon&lt;/code&gt; app.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/greeting-ribbon
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) After the a few moments, check the &lt;code&gt;service-registry&lt;/code&gt; &lt;a href=&#34;http://localhost:8761&#34;&gt;dashboard&lt;/a&gt;.  Confirm the &lt;code&gt;greeting-ribbon&lt;/code&gt; app is registered.&lt;/p&gt;
+
+&lt;p&gt;4) &lt;a href=&#34;http://localhost:8080/&#34;&gt;Browse&lt;/a&gt; to the &lt;code&gt;greeting-ribbon&lt;/code&gt; application.  Confirm you are seeing fortunes.  Refresh as desired.  Also review the terminal output for the &lt;code&gt;greeting-ribbon&lt;/code&gt; app.  See the &lt;code&gt;uri&lt;/code&gt; and &lt;code&gt;serviceId&lt;/code&gt; being logged.&lt;/p&gt;
+
+&lt;p&gt;5) Stop the &lt;code&gt;greeting-ribbon&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;h3 id=&#34;set-up-greeting-ribbon-rest:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Set up &lt;code&gt;greeting-ribbon-rest&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;No additions to the pom.xml&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In this case, we don&amp;rsquo;t need to explicitly include Ribbon support in the &lt;code&gt;pom.xml&lt;/code&gt;.  Ribbon support is pulled in through transitive dependencies (dependencies of the dependencies we have already defined).&lt;/p&gt;
+
+&lt;p&gt;1) Review the the following file: &lt;code&gt;$SPRING_CLOUD_SERVICES_LABS_HOME/greeting-ribbon-rest/src/main/java/io/pivotal/greeting/GreetingController.java&lt;/code&gt;.  Notice the &lt;code&gt;RestTemplate&lt;/code&gt;.  It is not the usual &lt;code&gt;RestTemplate&lt;/code&gt;, it is load balanced by Ribbon.  The &lt;code&gt;@LoadBalanced&lt;/code&gt; annotation is a qualifier to ensure we get the load balanced &lt;code&gt;RestTemplate&lt;/code&gt; injected.  This further simplifies application code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Controller
+public class GreetingController {
+
+	Logger logger = LoggerFactory
+			.getLogger(GreetingController.class);
+
+
+
+
+	@Autowired
+	@LoadBalanced
+	private RestTemplate restTemplate;
+
+	@RequestMapping(&amp;quot;/&amp;quot;)
+	String getGreeting(Model model){
+
+		logger.debug(&amp;quot;Adding greeting&amp;quot;);
+		model.addAttribute(&amp;quot;msg&amp;quot;, &amp;quot;Greetings!!!&amp;quot;);
+
+
+  	String fortune = restTemplate.getForObject(&amp;quot;http://fortune-service&amp;quot;, String.class);
+
+		logger.debug(&amp;quot;Adding fortune&amp;quot;);
+		model.addAttribute(&amp;quot;fortune&amp;quot;, fortune);
+
+		//resolves to the greeting.vm velocity template
+		return &amp;quot;greeting&amp;quot;;
+	}
+
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Open a new terminal window.  Start the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; app.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd $SPRING_CLOUD_SERVICES_LABS_HOME/greeting-ribbon-rest
+$ mvn clean spring-boot:run
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) After the a few moments, check the &lt;code&gt;service-registry&lt;/code&gt; &lt;a href=&#34;http://localhost:8761&#34;&gt;dashboard&lt;/a&gt;.  Confirm the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; app is registered.&lt;/p&gt;
+
+&lt;p&gt;4) &lt;a href=&#34;http://localhost:8080/&#34;&gt;Browse&lt;/a&gt; to the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; application.  Confirm you are seeing fortunes.  Refresh as desired.  Also review the terminal output for the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; app.&lt;/p&gt;
+
+&lt;p&gt;5) When done stop the &lt;code&gt;config-server&lt;/code&gt;, &lt;code&gt;service-registry&lt;/code&gt;, &lt;code&gt;fortune-service&lt;/code&gt; and &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; applications.&lt;/p&gt;
+
+&lt;h3 id=&#34;deploy-the-greeting-ribbon-rest-to-pcf:22b1984e9055744bcb6b52260dfdfb71&#34;&gt;Deploy the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; to PCF&lt;/h3&gt;
+
+&lt;p&gt;1) Package and push the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mvn clean package
+$ cf push greeting-ribbon-rest -p target/greeting-ribbon-rest-0.0.1-SNAPSHOT.jar -m 512M --random-route --no-start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Bind services for the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf bind-service greeting-ribbon-rest config-server
+$ cf bind-service greeting-ribbon-rest service-registry
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can safely ignore the &lt;em&gt;TIP: Use &amp;lsquo;cf restage&amp;rsquo; to ensure your env variable changes take effect&lt;/em&gt; message from the CLI.  We don&amp;rsquo;t need to restage at this time.&lt;/p&gt;
+
+&lt;p&gt;3) If using self signed certificates, set the &lt;code&gt;CF_TARGET&lt;/code&gt; environment variable for the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; application.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf set-env greeting-ribbon-rest CF_TARGET &amp;lt;your api endpoint - make sure it starts with &amp;quot;https://&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can safely ignore the &lt;em&gt;TIP: Use &amp;lsquo;cf restage&amp;rsquo; to ensure your env variable changes take effect&lt;/em&gt; message from the CLI.  We don&amp;rsquo;t need to restage at this time.&lt;/p&gt;
+
+&lt;p&gt;4) Start the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; app.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cf start greeting-ribbon-rest
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5) After the a few moments, check the &lt;code&gt;service-registry&lt;/code&gt;.  Confirm the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; app is registered.&lt;/p&gt;
+
+&lt;p&gt;6) Refresh the &lt;code&gt;greeting-ribbon-rest&lt;/code&gt; &lt;code&gt;/&lt;/code&gt; endpoint.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note About This Lab&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If services (e.g. &lt;code&gt;fortune-service&lt;/code&gt;) are registering using the first Cloud Foundry URI (using the &lt;code&gt;route&lt;/code&gt; registration method) this means that requests to them are being routed through the &lt;code&gt;router&lt;/code&gt; and subsequently load balanced at that layer.  Therefore, client side load balancing doesn&amp;rsquo;t occur.&lt;/p&gt;
+
+&lt;p&gt;Pivotal Cloud Foundry has recently added support for allowing cross container communication.  This will allow applications to communicate with each other without passing through the &lt;code&gt;router&lt;/code&gt;.  As applied to client-side load balancing, services such as &lt;code&gt;fortune-service&lt;/code&gt; would register with Eureka using their container IP addresses.  Allowing clients to reach them without going through the &lt;code&gt;router&lt;/code&gt;.  This is known as using the &lt;code&gt;direct&lt;/code&gt; registration method.&lt;/p&gt;
+
+&lt;p&gt;For more details, please read the &lt;a href=&#34;http://docs.pivotal.io/spring-cloud-services/service-registry/registering-a-service.html&#34;&gt;following&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -43,7 +279,15 @@
       <pubDate>Tue, 03 Nov 2015 10:36:33 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-client-side-load-balancing/goals/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;what-you-will-learn:67219471296bc33b6a375f4239ac14a2&#34;&gt;What You Will Learn&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to use Ribbon as a client side load balancer&lt;/li&gt;
+&lt;li&gt;How to use a Ribbon enabled &lt;code&gt;RestTemplate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -52,7 +296,13 @@
       <pubDate>Tue, 03 Nov 2015 10:36:18 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-client-side-load-balancing/_index/</guid>
-      <description></description>
+      <description>&lt;p&gt;In this workshop, we will use &lt;a href=&#34;http://cloud.spring.io/spring-cloud-netflix/&#34;&gt;Spring Cloud Netflix&lt;/a&gt; to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use Ribbon as a client side load balancer&lt;/li&gt;
+&lt;li&gt;Use a Ribbon enabled &lt;code&gt;RestTemplate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>
