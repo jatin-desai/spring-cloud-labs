@@ -1,0 +1,10 @@
+languageCode = "en-us"
+title = "Spring Cloud Netflix: Client Side Load Balancing"
+theme = "hugo-theme-bootie-docs"
+copyright = "© Copyright Pivotal. All rights reserved."
+
+[params]
+  basedir = "/spring-cloud-services-spring-cloud-netflix-client-side-load-balancing"
+  mainMenu=["goals", "setup", "instructions", "resources"]
+  noCategoryLink = true
+  description = ""
