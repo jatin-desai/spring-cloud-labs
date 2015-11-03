@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Cloud Netflix: Circuit Breaking</title>
+    <link>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/</link>
+    <description>Recent content on Spring Cloud Netflix: Circuit Breaking</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright Pivotal. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 03 Nov 2015 10:51:37 -0800</lastBuildDate>
+    <atom:link href="http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Setup</title>
+      <link>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/setup/</link>
+      <pubDate>Tue, 03 Nov 2015 10:51:37 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/resources/</link>
+      <pubDate>Tue, 03 Nov 2015 10:51:33 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/resources/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Instructions</title>
+      <link>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/instructions/</link>
+      <pubDate>Tue, 03 Nov 2015 10:51:29 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/instructions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Goals</title>
+      <link>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/goals/</link>
+      <pubDate>Tue, 03 Nov 2015 10:51:23 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/goals/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>_index</title>
+      <link>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/_index/</link>
+      <pubDate>Tue, 03 Nov 2015 10:51:16 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-services-spring-cloud-netflix-circuit-breaking/_index/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

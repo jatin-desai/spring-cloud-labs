@@ -1,0 +1,10 @@
+languageCode = "en-us"
+title = "Spring Cloud Netflix: Circuit Breaking"
+theme = "hugo-theme-bootie-docs"
+copyright = "© Copyright Pivotal. All rights reserved."
+
+[params]
+  basedir = "/spring-cloud-services-spring-cloud-netflix-circuit-breaking"
+  mainMenu=["goals", "setup", "instructions", "resources"]
+  noCategoryLink = true
+  description = ""

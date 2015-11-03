@@ -7,3 +7,6 @@
 [submodule "spring-cloud-netflix-client-side-load-balancing/themes/hugo-theme-bootie-docs"]
 	path = spring-cloud-netflix-client-side-load-balancing/themes/hugo-theme-bootie-docs
 	url = git@github.com:pivotal-enablement/hugo-theme-bootie-docs.git
+[submodule "spring-cloud-netflix-circuit-breaking/themes/hugo-theme-bootie-docs"]
+	path = spring-cloud-netflix-circuit-breaking/themes/hugo-theme-bootie-docs
+	url = git@github.com:pivotal-enablement/hugo-theme-bootie-docs.git
