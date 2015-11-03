@@ -1,3 +1,10 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Spring Cloud Netflix: Service Discovery"
+theme = "docs"
+copyright = "© Copyright Pivotal. All rights reserved."
+
+[params]
+  basedir = "/spring-cloud-services-spring-cloud-netflix-service-discovery"
+  mainMenu=["goals", "setup", "instructions", "resources"]
+  noCategoryLink = true
+  description = ""
