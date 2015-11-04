@@ -1,0 +1,10 @@
+languageCode = "en-us"
+title = "Spring Cloud Labs Setup"
+theme = "hugo-theme-bootie-docs"
+copyright = "© Copyright Pivotal. All rights reserved."
+
+[params]
+  basedir = "/spring-cloud-services-spring-cloud-labs-setup"
+  mainMenu=["requirements", "setup", "windows_vm"]
+  noCategoryLink = true
+  description = ""

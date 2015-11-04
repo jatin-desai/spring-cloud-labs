@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Cloud Labs Setup</title>
+    <link>http://:1313/spring-cloud-services-spring-cloud-labs-setup/</link>
+    <description>Recent content on Spring Cloud Labs Setup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright Pivotal. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 03 Nov 2015 16:29:34 -0800</lastBuildDate>
+    <atom:link href="http://:1313/spring-cloud-services-spring-cloud-labs-setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>windows_vm</title>
+      <link>http://:1313/spring-cloud-services-spring-cloud-labs-setup/windows_vm/</link>
+      <pubDate>Tue, 03 Nov 2015 16:29:34 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-services-spring-cloud-labs-setup/windows_vm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>setup</title>
+      <link>http://:1313/spring-cloud-services-spring-cloud-labs-setup/setup/</link>
+      <pubDate>Tue, 03 Nov 2015 16:29:16 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-services-spring-cloud-labs-setup/setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>requirements</title>
+      <link>http://:1313/spring-cloud-services-spring-cloud-labs-setup/requirements/</link>
+      <pubDate>Tue, 03 Nov 2015 16:29:09 -0800</pubDate>
+      
+      <guid>http://:1313/spring-cloud-services-spring-cloud-labs-setup/requirements/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
