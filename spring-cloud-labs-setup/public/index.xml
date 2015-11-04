@@ -16,7 +16,92 @@
       <pubDate>Tue, 03 Nov 2015 16:29:34 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-labs-setup/windows_vm/</guid>
-      <description></description>
+      <description>
+
+&lt;h1 id=&#34;windows-vm:c3a8a70f20de2155d2e234777cc3cf15&#34;&gt;Windows VM&lt;/h1&gt;
+
+&lt;p&gt;A Windows VM is available to complete the labs.&lt;/p&gt;
+
+&lt;h2 id=&#34;windows-vm-ami-details:c3a8a70f20de2155d2e234777cc3cf15&#34;&gt;Windows VM AMI Details&lt;/h2&gt;
+
+&lt;p&gt;1) User must have access to an AWS account (can run from any account)&lt;/p&gt;
+
+&lt;p&gt;2) User must have an existing key pair in the account or create one&lt;/p&gt;
+
+&lt;p&gt;3) The AMI can be found be searching for &lt;code&gt;WinServer08STS&lt;/code&gt; in the EC2 Dashboard.  Must be in the N. Virginia region.&lt;/p&gt;
+
+&lt;p&gt;Launch the AMI named &lt;code&gt;WinServer08STS&lt;/code&gt;. In AWS, in the EC2 dashboard, select (or search for the public image) Images &amp;gt; AMIs &amp;gt; WinServer08STS. Click Launch.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; AMI pick the AMI with the greatest number appended to the AMI Name.  In this case, &lt;code&gt;WinServer08STS7&lt;/code&gt;
+&lt;img src=&#34;http://:1313/spring-cloud-services-spring-cloud-labs-setup/spring-cloud-services-spring-cloud-labs-setup/resources/images/ami.png&#34; alt=&#34;search for ami&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;4) When launching, accept defaults except:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Step 2: Choose an Instance Type &amp;gt; t2.medium (4 GB memory)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Step 3: Configure Instance Details &amp;gt; Auto-assign Public IP &amp;gt; Enable&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Step 5: Tag Instance &amp;gt; Key: Name Value: “windows&lt;studentname&gt;” or “windows&lt;studentnumber&gt;” This will show up as the EC2 instance name&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;5) Launch the instance&lt;/p&gt;
+
+&lt;p&gt;Once the instance is running, select it in list of EC2 instances. Obtain the Public IP.&lt;/p&gt;
+
+&lt;p&gt;6) Credential information (user/password) will be provided by your trainer.&lt;/p&gt;
+
+&lt;h2 id=&#34;who-should-use-the-windows-vm:c3a8a70f20de2155d2e234777cc3cf15&#34;&gt;Who Should Use the Windows VM?&lt;/h2&gt;
+
+&lt;p&gt;Please consider using this VM if you have any of the following limitations:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Your system does not meet the technical requirements&lt;/li&gt;
+&lt;li&gt;You can&amp;rsquo;t install software on your system&lt;/li&gt;
+&lt;li&gt;You have limited network access&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;requirements:c3a8a70f20de2155d2e234777cc3cf15&#34;&gt;Requirements&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RDP Client on your system (most operating systems ship with one)&lt;/li&gt;
+&lt;li&gt;Network connectivity and access to reach Windows VM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;software-installed:c3a8a70f20de2155d2e234777cc3cf15&#34;&gt;Software Installed&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;All required and optional software listed as part of the &lt;a href=&#34;https://github.com/pivotal-enablement/cloud-native-app-labs/blob/master/lab-instructions/requirements.md&#34;&gt;requirements&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;best-practices:c3a8a70f20de2155d2e234777cc3cf15&#34;&gt;Best Practices&lt;/h2&gt;
+
+&lt;h3 id=&#34;work-directory:c3a8a70f20de2155d2e234777cc3cf15&#34;&gt;Work Directory&lt;/h3&gt;
+
+&lt;p&gt;As part of the VM there is a &lt;code&gt;repos&lt;/code&gt; directory.  It is located at &lt;code&gt;C:\Users\Administrator\repos&lt;/code&gt;.  This is where you will clone repos from GitHub.  This will be referred to as $REPOS_HOME throughout the labs.&lt;/p&gt;
+
+&lt;h3 id=&#34;powercmd:c3a8a70f20de2155d2e234777cc3cf15&#34;&gt;PowerCmd&lt;/h3&gt;
+
+&lt;p&gt;The Windows console is very limited in the sense that it lacks tab support, search and other features one might like in a console/terminal experience.&lt;/p&gt;
+
+&lt;p&gt;Therefore, also installed is an alternative to the command prompt known as &lt;a href=&#34;http://www.powercmd.com/&#34;&gt;PowerCmd&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We recommend using PowerCmd to execute the labs.  You can launch PowerCmd from the desktop.  It will open to your &lt;code&gt;$REPOS_HOME&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://:1313/spring-cloud-services-spring-cloud-labs-setup/spring-cloud-services-spring-cloud-labs-setup/resources/images/initial.png&#34; alt=&#34;PowerCmd Tab&#34; title=&#34;PowerCmd Tab&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;use-labeled-tabs:c3a8a70f20de2155d2e234777cc3cf15&#34;&gt;Use Labeled Tabs&lt;/h4&gt;
+
+&lt;p&gt;As part of the labs you will be starting many processes.  Organizing the processes with tabs makes a ton of sense, otherwise you will have windows everywhere making it difficult to manage.&lt;/p&gt;
+
+&lt;p&gt;To label the tab execute the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;title - &amp;lt;tab label&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For example, creating a tab for the &lt;code&gt;config-server&lt;/code&gt;.  This is where work done with the &lt;code&gt;config-server&lt;/code&gt; would take place.
+&lt;img src=&#34;http://:1313/spring-cloud-services-spring-cloud-labs-setup/spring-cloud-services-spring-cloud-labs-setup/resources/images/tab.png&#34; alt=&#34;PowerCmd&#34; title=&#34;PowerCmd&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -34,7 +119,54 @@
       <pubDate>Tue, 03 Nov 2015 16:29:09 -0800</pubDate>
       
       <guid>http://:1313/spring-cloud-services-spring-cloud-labs-setup/requirements/</guid>
-      <description></description>
+      <description>
+
+&lt;h2 id=&#34;lab-requirements:a05dcee144da6675ae9d2fe98e94d8dd&#34;&gt;Lab Requirements&lt;/h2&gt;
+
+&lt;h3 id=&#34;personal-experience:a05dcee144da6675ae9d2fe98e94d8dd&#34;&gt;Personal Experience&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Experience with &lt;a href=&#34;http://pivotal.io/platform&#34;&gt;Pivotal Cloud Foundry&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Experience with &lt;a href=&#34;https://spring.io/&#34;&gt;Spring&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;pivotal-cloud-foundry-environment:a05dcee144da6675ae9d2fe98e94d8dd&#34;&gt;Pivotal Cloud Foundry Environment&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Access to Pivotal Cloud Foundry Environment&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://network.pivotal.io/products/p-spring-cloud-services&#34;&gt;Spring Cloud Services&lt;/a&gt; 1.0.0 Tile Installed&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;6 GB of Memory Quota available&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;local-machine-requirements:a05dcee144da6675ae9d2fe98e94d8dd&#34;&gt;Local machine requirements&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;4GB Memory&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&#34;&gt;JDK 1.8&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;https://maven.apache.org/&#34;&gt;Maven&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation and experience with &lt;a href=&#34;https://git-scm.com/&#34;&gt;git&lt;/a&gt; and&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/&#34;&gt;Github Account&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;http://curl.haxx.se/download.html&#34;&gt;&lt;code&gt;curl&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installation of &lt;a href=&#34;https://console.run.pivotal.io/tools&#34;&gt;&lt;code&gt;cf&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;optional-but-recommended:a05dcee144da6675ae9d2fe98e94d8dd&#34;&gt;Optional (but recommended)&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://spring.io/tools&#34;&gt;SpringSource Tool Suite&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en&#34;&gt;Json Formatter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
     
   </channel>

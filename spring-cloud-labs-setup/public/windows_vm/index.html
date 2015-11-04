@@ -65,6 +65,91 @@
 					</div>
 					<section>
 						
+
+<h1 id="windows-vm:c3a8a70f20de2155d2e234777cc3cf15">Windows VM</h1>
+
+<p>A Windows VM is available to complete the labs.</p>
+
+<h2 id="windows-vm-ami-details:c3a8a70f20de2155d2e234777cc3cf15">Windows VM AMI Details</h2>
+
+<p>1) User must have access to an AWS account (can run from any account)</p>
+
+<p>2) User must have an existing key pair in the account or create one</p>
+
+<p>3) The AMI can be found be searching for <code>WinServer08STS</code> in the EC2 Dashboard.  Must be in the N. Virginia region.</p>
+
+<p>Launch the AMI named <code>WinServer08STS</code>. In AWS, in the EC2 dashboard, select (or search for the public image) Images &gt; AMIs &gt; WinServer08STS. Click Launch.</p>
+
+<p><strong>NOTE</strong> AMI pick the AMI with the greatest number appended to the AMI Name.  In this case, <code>WinServer08STS7</code>
+<img src="/spring-cloud-services-spring-cloud-labs-setup/resources/images/ami.png" alt="search for ami" /></p>
+
+<p>4) When launching, accept defaults except:</p>
+
+<ol>
+<li><p>Step 2: Choose an Instance Type &gt; t2.medium (4 GB memory)</p></li>
+
+<li><p>Step 3: Configure Instance Details &gt; Auto-assign Public IP &gt; Enable</p></li>
+
+<li><p>Step 5: Tag Instance &gt; Key: Name Value: “windows<studentname>” or “windows<studentnumber>” This will show up as the EC2 instance name</p></li>
+</ol>
+
+<p>5) Launch the instance</p>
+
+<p>Once the instance is running, select it in list of EC2 instances. Obtain the Public IP.</p>
+
+<p>6) Credential information (user/password) will be provided by your trainer.</p>
+
+<h2 id="who-should-use-the-windows-vm:c3a8a70f20de2155d2e234777cc3cf15">Who Should Use the Windows VM?</h2>
+
+<p>Please consider using this VM if you have any of the following limitations:</p>
+
+<ul>
+<li>Your system does not meet the technical requirements</li>
+<li>You can&rsquo;t install software on your system</li>
+<li>You have limited network access</li>
+</ul>
+
+<h2 id="requirements:c3a8a70f20de2155d2e234777cc3cf15">Requirements</h2>
+
+<ul>
+<li>RDP Client on your system (most operating systems ship with one)</li>
+<li>Network connectivity and access to reach Windows VM</li>
+</ul>
+
+<h2 id="software-installed:c3a8a70f20de2155d2e234777cc3cf15">Software Installed</h2>
+
+<ul>
+<li>All required and optional software listed as part of the <a href="https://github.com/pivotal-enablement/cloud-native-app-labs/blob/master/lab-instructions/requirements.md">requirements</a>.</li>
+</ul>
+
+<h2 id="best-practices:c3a8a70f20de2155d2e234777cc3cf15">Best Practices</h2>
+
+<h3 id="work-directory:c3a8a70f20de2155d2e234777cc3cf15">Work Directory</h3>
+
+<p>As part of the VM there is a <code>repos</code> directory.  It is located at <code>C:\Users\Administrator\repos</code>.  This is where you will clone repos from GitHub.  This will be referred to as $REPOS_HOME throughout the labs.</p>
+
+<h3 id="powercmd:c3a8a70f20de2155d2e234777cc3cf15">PowerCmd</h3>
+
+<p>The Windows console is very limited in the sense that it lacks tab support, search and other features one might like in a console/terminal experience.</p>
+
+<p>Therefore, also installed is an alternative to the command prompt known as <a href="http://www.powercmd.com/">PowerCmd</a>.</p>
+
+<p>We recommend using PowerCmd to execute the labs.  You can launch PowerCmd from the desktop.  It will open to your <code>$REPOS_HOME</code> directory.</p>
+
+<p><img src="/spring-cloud-services-spring-cloud-labs-setup/resources/images/initial.png" alt="PowerCmd Tab" title="PowerCmd Tab" /></p>
+
+<h4 id="use-labeled-tabs:c3a8a70f20de2155d2e234777cc3cf15">Use Labeled Tabs</h4>
+
+<p>As part of the labs you will be starting many processes.  Organizing the processes with tabs makes a ton of sense, otherwise you will have windows everywhere making it difficult to manage.</p>
+
+<p>To label the tab execute the following:</p>
+
+<pre><code class="language-bash">title - &lt;tab label&gt;
+</code></pre>
+
+<p>For example, creating a tab for the <code>config-server</code>.  This is where work done with the <code>config-server</code> would take place.
+<img src="/spring-cloud-services-spring-cloud-labs-setup/resources/images/tab.png" alt="PowerCmd" title="PowerCmd" /></p>
+
 					</section>
 				</article>
 			</main>
