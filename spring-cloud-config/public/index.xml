@@ -503,7 +503,7 @@ $ mvn clean spring-boot:run
 
 &lt;p&gt;2) Make sure the profile is set by browsing to the &lt;a href=&#34;http://localhost:8080/env&#34;&gt;http://localhost:8080/env&lt;/a&gt; endpoint (provided by &lt;code&gt;actuator&lt;/code&gt;).  Under profiles &lt;code&gt;qa&lt;/code&gt; should be listed.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;resources/images/profile.png&#34; alt=&#34;profile&#34; title=&#34;qa profile&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/profile.png&#34; alt=&#34;profile&#34; title=&#34;qa profile&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;3) In your fork of the &lt;code&gt;app-config&lt;/code&gt; repository, create a new file: &lt;code&gt;greeting-config-qa.yml&lt;/code&gt;. Fill it in with the following content:&lt;/p&gt;
 
@@ -555,7 +555,7 @@ $ mvn clean spring-boot:run
 &lt;p&gt;d) In the &lt;strong&gt;&lt;em&gt;Services&lt;/em&gt;&lt;/strong&gt; list, click the &lt;strong&gt;&lt;em&gt;Manage&lt;/em&gt;&lt;/strong&gt; link under the listing for the new service instance.  The Config Server may take a few moments to initialize.
 &lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/4_service_successfully_added.png&#34; alt=&#34;service successfully added&#34; title=&#34;service successfully added&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;e) Select &lt;code&gt;Git&lt;/code&gt; as the &lt;strong&gt;&lt;em&gt;Configuration Source&lt;/em&gt;&lt;/strong&gt; and enter your fork of the &lt;code&gt;app-config&lt;/code&gt; repo under &lt;strong&gt;&lt;em&gt;GitURI&lt;/em&gt;&lt;/strong&gt;.  Do not use the literal below.
+&lt;p&gt;e) Select &lt;code&gt;Git&lt;/code&gt; as the &lt;strong&gt;&lt;em&gt;Configuration Source&lt;/em&gt;&lt;/strong&gt; and enter your fork of the &lt;code&gt;app-config&lt;/code&gt; repo under &lt;strong&gt;&lt;em&gt;Git URI&lt;/em&gt;&lt;/strong&gt;.  Do not use the literal below.
 &lt;img src=&#34;http://:1313/spring-cloud-config/spring-cloud-config/resources/images/dashboard.png&#34; alt=&#34;dashboard&#34; title=&#34;dashboard&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;f) The Config Server instance (&lt;code&gt;config-server&lt;/code&gt;) is now ready to be used.&lt;/p&gt;

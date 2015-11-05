@@ -510,7 +510,7 @@ $ mvn clean spring-boot:run
 
 <p>2) Make sure the profile is set by browsing to the <a href="http://localhost:8080/env">http://localhost:8080/env</a> endpoint (provided by <code>actuator</code>).  Under profiles <code>qa</code> should be listed.</p>
 
-<p><img src="resources/images/profile.png" alt="profile" title="qa profile" /></p>
+<p><img src="/spring-cloud-config/resources/images/profile.png" alt="profile" title="qa profile" /></p>
 
 <p>3) In your fork of the <code>app-config</code> repository, create a new file: <code>greeting-config-qa.yml</code>. Fill it in with the following content:</p>
 
@@ -562,7 +562,7 @@ $ mvn clean spring-boot:run
 <p>d) In the <strong><em>Services</em></strong> list, click the <strong><em>Manage</em></strong> link under the listing for the new service instance.  The Config Server may take a few moments to initialize.
 <img src="/spring-cloud-config/resources/images/4_service_successfully_added.png" alt="service successfully added" title="service successfully added" /></p>
 
-<p>e) Select <code>Git</code> as the <strong><em>Configuration Source</em></strong> and enter your fork of the <code>app-config</code> repo under <strong><em>GitURI</em></strong>.  Do not use the literal below.
+<p>e) Select <code>Git</code> as the <strong><em>Configuration Source</em></strong> and enter your fork of the <code>app-config</code> repo under <strong><em>Git URI</em></strong>.  Do not use the literal below.
 <img src="/spring-cloud-config/resources/images/dashboard.png" alt="dashboard" title="dashboard" /></p>
 
 <p>f) The Config Server instance (<code>config-server</code>) is now ready to be used.</p>
